@@ -1,0 +1,25 @@
+.cell {
+  border-radius: 0px;
+  background: #00FFFF;
+  padding: 5px;
+  height: 70px;
+  border: 1px solid black;
+  overflow: auto;
+}
+
+.button {
+  border-radius: 5px;
+  background: #00FF00;
+  border: 1px solid black;
+}
+
+td,
+th {
+  vertical-align: top;
+  width: 50%;
+}
+
+.txt {
+  width: 100%;
+  height: 100%;
+}
