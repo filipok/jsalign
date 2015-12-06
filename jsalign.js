@@ -1,4 +1,5 @@
 //<![CDATA[
+<!-- using code from http://jsfiddle.net/X33px/2/-->
 $(window).load(function(){
 $('div').each(function() {
   $(this).prepend('<a class="button delete" href="#">Delete</a>  <a href="#" class="button edit">Edit</a> <a class="button merge" href="#">Merge with next</a>')
