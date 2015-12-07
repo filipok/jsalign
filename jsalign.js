@@ -1,6 +1,47 @@
 //<![CDATA[
 // using code from http://jsfiddle.net/X33px/2/
 
+$(document).ready( function() {
+    $('#save-button').click(function(){
+
+        // http://stackoverflow.com/questions/26689876/how-to-save-html-that-was-modified-on-the-browser-the-dom-with-javascript-jque
+
+        // Save the page's HTML to a file that is automatically downloaded.
+
+        // We make a Blob that contains the data to download.
+        var clona = document.cloneNode(true);
+
+        // some cleanup
+        var buttons = clona.getElementsByClassName('button');
+        while (buttons.length > 0) {
+          buttons[0].parentNode.removeChild(buttons[0]);
+        }
+        var divbutton = clona.getElementById('div-button');
+        alert(typeof divbutton);
+        divbutton.parentNode.removeChild(divbutton);
+        var links = clona.getElementsByClassName('links');
+        while (links.length > 0) {
+          links[0].parentNode.removeChild(links[0]);
+        }
+
+        var file = new window.Blob([clona.documentElement.innerHTML], { type: "text/html" });
+        var URL = window.webkitURL || window.URL;
+
+        // This is the URL that will download the data.
+        var downloadUrl = URL.createObjectURL(file);
+
+        var a = document.createElement("a");
+        // This sets the file name.
+        a.download = "source.htm";
+        a.href = downloadUrl;
+
+        // Actually perform the download.
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    })
+});
+
 $(document).on('click', 'a.add', function() {
   var val = $(this).parent().next().html();
   $(this).parent().next().replaceWith('<div class="cell">' +
@@ -51,7 +92,7 @@ $(document).on('click', 'a.edit', function() {
 });
 
 $(window).load(function(){
-$('div').each(function() {
+$('div.cell').each(function() {
   $(this).prepend('<a class="button add" href="#">Add new</a>' + 
     '<a class="button delete" href="#">Delete</a>' +
     ' <a href="#" class="button edit">Edit</a>' +

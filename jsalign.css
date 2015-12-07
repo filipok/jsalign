@@ -23,3 +23,17 @@ th {
   width: 100%;
   height: 100%;
 }
+
+#div-button {
+  width: 100px;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+#save-button {
+  width: 100px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  background: #FF00FF;
+}
