@@ -10,7 +10,7 @@ $(document).ready( function() {
 
         // We make a Blob that contains the data to download.
         var clona = document.cloneNode(true);
-=
+
         // some cleanup
         var buttons = clona.getElementsByClassName('button');
         while (buttons.length > 0) {
