@@ -12,7 +12,7 @@ $(document).ready( function() {
         var clona = document.cloneNode(true);
 
         // some cleanup
-        var buttons = clona.getElementsByClassName('button');
+        var buttons = clona.getElementsByClassName('buttons');
         while (buttons.length > 0) {
           buttons[0].parentNode.removeChild(buttons[0]);
         }
@@ -23,7 +23,8 @@ $(document).ready( function() {
           links[0].parentNode.removeChild(links[0]);
         }
 
-        var file = new window.Blob([clona.documentElement.innerHTML], { type: "text/html" });
+        var file = new window.Blob(
+          [clona.documentElement.innerHTML], { type: "text/html" });
         var URL = window.webkitURL || window.URL;
 
         // This is the URL that will download the data.
@@ -42,12 +43,12 @@ $(document).ready( function() {
 });
 
 $(document).on('click', 'a.add', function() {
-  var val = $(this).parent().next().html();
-  $(this).parent().next().replaceWith('<div class="cell">' +
-    '<a class="button add" href="#">Add new</a>' + 
+  var val = $(this).parent().parent().next().html();
+  $(this).parent().parent().next().replaceWith('<div class="cell">' +
+    '<span class="buttons"><a class="button add" href="#">Add new</a>' + 
     '<a class="button delete" href="#">Delete</a>' + 
     '<a href="#" class="button edit">Edit</a>' + 
-    '<a class="button merge" href="#">Merge with next</a>' + 
+    '<a class="button merge" href="#">Merge with next</a></span>' + 
     '<span class="celltext"></span></div>' +
     '<div class="cell">' + val + '</div>');
   return false;
@@ -56,34 +57,36 @@ $(document).on('click', 'a.add', function() {
 
 $(document).on('click', 'a.delete', function() {
   if (window.confirm("Are you sure you want to delete this segment?")) {
-    $(this).parent().remove();
+    $(this).parent().parent().remove();
   };
   return false;
 });
 
 $(document).on('click', 'a.merge', function() {
   if (window.confirm("Are you sure you want to merge this segment?")) {
-    var val = $(this).parent().next().children('span').html();
-    $(this).parent().children('span').append(" " + val);
-    $(this).parent().next().remove();
+    var val = $(this).parent().parent().next().children('span')[1].innerHTML;
+    $(this).parent().parent().children('span')[1].innerHTML += " " + val;
+    $(this).parent().parent().next().remove();
   };
   return false;
 });
 
 $(document).on('click', 'a.edit', function() {
-  var val = $(this).siblings('span').html();
+  var val = $(this).parent().siblings('span').html();
   if (val === "") {
     val = "No text.";
   };
   if (val) {
-    $(this).parent().append('<textarea class="txt">' + val + '</textarea>');
-    $(this).siblings('span').remove();
+    $(this).parent().parent().append(
+      '<textarea class="txt">' + val + '</textarea>');
+    $(this).parent().siblings('span').remove();
     $(this).html('Update');
   } else {
-    var $txt = $(this).siblings().filter(function() {
+    var $txt = $(this).parent().siblings().filter(function() {
       return $(this).hasClass('txt')
     });
-    $(this).parent().append('<span class="celltext">' + $txt.val() + '</span>');
+    $(this).parent().parent().append(
+      '<span class="celltext">' + $txt.val() + '</span>');
     $txt.remove();
     $(this).html('Edit');
   }
@@ -92,10 +95,11 @@ $(document).on('click', 'a.edit', function() {
 
 $(window).load(function(){
 $('div.cell').each(function() {
-  $(this).prepend('<a class="button add" href="#">Add new</a>' + 
+  $(this).prepend('<span class="buttons">' + 
+    '<a class="button add" href="#">Add new</a>' + 
     '<a class="button delete" href="#">Delete</a>' +
     ' <a href="#" class="button edit">Edit</a>' +
-    '<a class="button merge" href="#">Merge with next</a>');
+    '<a class="button merge" href="#">Merge with next</a></span>');
 });
 
 });//]]> 
