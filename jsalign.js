@@ -18,6 +18,8 @@ $(document).ready( function() {
         }
         var divbutton = clona.getElementById('div-button');
         divbutton.parentNode.removeChild(divbutton);
+        var docinfo = clona.getElementById('doc-info');
+        docinfo.parentNode.removeChild(docinfo);
         var links = clona.getElementsByClassName('links');
         while (links.length > 0) {
           links[0].parentNode.removeChild(links[0]);
