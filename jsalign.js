@@ -13,7 +13,7 @@ $(document).ready( function() {
 
         // some cleanup
         
-        bucata asta se poate elimina daca rezolv cu tmx-ul
+        //bucata asta se poate elimina daca rezolv cu tmx-ul
         var buttons = clona.getElementsByClassName('buttons');
         while (buttons.length > 0) {
           buttons[0].parentNode.removeChild(buttons[0]);
