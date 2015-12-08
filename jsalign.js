@@ -1,6 +1,5 @@
 //<![CDATA[
 
-
 $(document).ready( function() {
     $('#save-button').click(function(){
 
@@ -116,10 +115,10 @@ $(document).ready( function() {
 $(document).on('click', 'a.add', function() {
   var val = $(this).parent().parent().next().html();
   $(this).parent().parent().next().replaceWith('<div class="cell">' +
-    '<span class="buttons"><a class="button add" href="#">Add new</a>' + 
-    '<a class="button delete" href="#">Delete</a>' + 
+    '<span class="buttons"><a class="button add" href="#">+ ↓</a>' + 
+    '<a class="button delete" href="#">Del</a>' + 
     '<a href="#" class="button edit">Edit</a>' + 
-    '<a class="button merge" href="#">Merge with next</a></span>' + 
+    '<a class="button merge" href="#">⛓ ↓</a></span>' + 
     '<span class="celltext"></span></div>' +
     '<div class="cell">' + val + '</div>');
   return false;
@@ -134,7 +133,8 @@ $(document).on('click', 'a.delete', function() {
 });
 
 $(document).on('click', 'a.merge', function() {
-  if (window.confirm("Are you sure you want to merge this segment?")) {
+  if (window.confirm(
+    "Are you sure you want to merge it with the following segment?")) {
     var val = $(this).parent().parent().next().children('span')[1].innerHTML;
     $(this).parent().parent().children('span')[1].innerHTML += " " + val;
     $(this).parent().parent().next().remove();
@@ -151,7 +151,7 @@ $(document).on('click', 'a.edit', function() {
     $(this).parent().parent().append(
       '<textarea class="txt">' + val + '</textarea>');
     $(this).parent().siblings('span').remove();
-    $(this).html('Update');
+    $(this).html('Save');
   } else {
     var $txt = $(this).parent().siblings().filter(function() {
       return $(this).hasClass('txt')
@@ -167,10 +167,10 @@ $(document).on('click', 'a.edit', function() {
 $(window).load(function(){
 $('div.cell').each(function() {
   $(this).prepend('<span class="buttons">' + 
-    '<a class="button add" href="#">Add new</a>' + 
-    '<a class="button delete" href="#">Delete</a>' +
+    '<a class="button add" href="#">+ ↓</a>' + 
+    '<a class="button delete" href="#">Del</a>' +
     ' <a href="#" class="button edit">Edit</a>' +
-    '<a class="button merge" href="#">Merge with next</a></span>');
+    '<a class="button merge" href="#">⛓ ↓</a></span>');
 });
 
 });//]]> 

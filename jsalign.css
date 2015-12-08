@@ -41,3 +41,19 @@ th {
 #doc-info {
   font-weight: bold;
 }
+
+a:link {
+  text-decoration: none;
+}
+
+.delete {
+  background: orange;
+}
+
+.edit {
+  background: yellow;
+}
+
+.merge {
+  background: mediumturquoise;
+}
