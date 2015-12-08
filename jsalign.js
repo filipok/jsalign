@@ -1,68 +1,118 @@
 //<![CDATA[
-// using code from http://jsfiddle.net/X33px/2/
+
 
 $(document).ready( function() {
     $('#save-button').click(function(){
 
         // http://stackoverflow.com/questions/26689876/how-to-save-html-that-was-modified-on-the-browser-the-dom-with-javascript-jque
 
-        // Save the page's HTML to a file that is automatically downloaded.
-
-        // We make a Blob that contains the data to download.
+        // Clone the DOM to extract the alignment information.
         var clona = document.cloneNode(true);
-
-        // some cleanup
-        
-        //bucata asta se poate elimina daca rezolv cu tmx-ul
-        var buttons = clona.getElementsByClassName('buttons');
-        while (buttons.length > 0) {
-          buttons[0].parentNode.removeChild(buttons[0]);
-        }
-        var divbutton = clona.getElementById('div-button');
-        divbutton.parentNode.removeChild(divbutton);
-        
-        var docinfo = clona.getElementById('doc-info');
-        docinfo.parentNode.removeChild(docinfo);
-        var links = clona.getElementsByClassName('links');
-        while (links.length > 0) {
-          links[0].parentNode.removeChild(links[0]);
-        }
-        
-        source_strings = clona.getElementById('source-col').getElementsByClassName('celltext');
+        // get segments
+        var source_strings = clona.getElementById(
+          'source-col').getElementsByClassName('celltext');
         source_strings = $.map(source_strings, function(item) { 
           return item.innerHTML; 
         });
-
-        target_strings = clona.getElementById('target-col').getElementsByClassName('celltext');
+        var target_strings = clona.getElementById(
+          'target-col').getElementsByClassName('celltext');
         target_strings = $.map(target_strings, function(item) { 
           return item.innerHTML; 
         });
-
-        // get info from meta
-        //TODO check for equal length
-        // add tmx header
-        // add tmx contents
-        // add footer        
         
-        var file = new window.Blob(
-          [clona.documentElement.innerHTML], { type: "text/html" });
-        var URL = window.webkitURL || window.URL;
+        //check for equal length of source and target segments
+        if (source_strings.length === target_strings.length) {
+          // get info from meta
+          // http://stackoverflow.com/questions/13451559/get-meta-attribute-content-by-selecting-property-attribute
+          var s_lang = $("meta[name='source-language']").attr("content");
+          var t_lang = $("meta[name='target-language']").attr("content");
+          var doccode = $("meta[name='doc-code']").attr("content");
+          // create new string variable
+          var tmx = '';
+          // add tmx header
+          tmx += '<?xml version="1.0" encoding="utf-8" ?>\n'
+          tmx += '<!DOCTYPE tmx SYSTEM "tmx14.dtd">\n'
+          tmx += '<tmx version="1.4">\n'
+          tmx += '  <header\n'
+          tmx += '    creationtool="eunlp"\n'
+          tmx += '    creationtoolversion="0.01"\n'
+          tmx += '    datatype="unknown"\n'
+          tmx += '    segtype="sentence"\n'
+          tmx += '    adminlang="' + s_lang + '"\n'
+          tmx += '    srclang="' + s_lang + '"\n'
+          tmx += '    o-tmf="TW4Win 2.0 Format"\n'
+          tmx += '  >\n'
+          tmx += '  </header>\n'
+          tmx += '  <body>\n'
+          // add tmx contents
+          // prepare "now" and "tag" variables
+          // http://stackoverflow.com/questions/1531093/how-to-get-current-date-in-javascript
+          var today = new Date();
+          var dd = today.getDate();
+          var mm = today.getMonth()+1; //January is 0!
+          var yyyy = today.getFullYear();
+          if(dd<10) {
+              dd='0'+dd
+          } 
+          if(mm<10) {
+              mm='0'+mm
+          }
+          var hours = today.getHours();
+          var minutes = today.getMinutes();
+          var seconds = today.getSeconds();
+          if(hours<10) {
+              hours='0'+hours
+          } 
+          if(minutes<10) {
+              minutes='0'+minutes
+          }
+          if(seconds<10) {
+              seconds='0'+seconds
+          }
+          var now = yyyy +  '' +  mm + '' + dd + "T" + 
+            + hours + minutes + seconds + "Z";
+          var tag = '<prop type="Txt::Alignment">Jsalign</prop>'
+          // use loop to add aligned segments to tmx
+          var items = source_strings.length;
+          for (i = 0; i < items; i++) { 
+            var tru = ''.concat('<tu creationdate="', now,
+                       '" creationid="jsalign"><prop type="Txt::Note">',
+                       doccode, '</prop>', tag, '\n')
+            var tuv_source = ''.concat('<tuv xml:lang="', s_lang, '"><seg>', 
+              source_strings[i], '</seg></tuv>\n')
 
-        // This is the URL that will download the data.
-        var downloadUrl = URL.createObjectURL(file);
+            var tuv_target = ''.concat('<tuv xml:lang="', t_lang, '"><seg>', 
+              target_strings[i], '</seg></tuv> </tu>\n\n')
+            var oneline = ''.concat(tru, tuv_source, tuv_target);
+            tmx += oneline;
+          }
+          // add footer
+          tmx += '\n'
+          tmx += '</body>\n'
+          tmx += '</tmx>'
 
-        var a = document.createElement("a");
-        // This sets the file name.
-        a.download = "source.htm";
-        a.href = downloadUrl;
-
-        // Actually perform the download.
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+          // create blob
+          var file = new window.Blob(
+            [tmx], { type: "text/html" });
+          var URL = window.webkitURL || window.URL;
+          // This is the URL that will download the data.
+          var downloadUrl = URL.createObjectURL(file);
+          var a = document.createElement("a");
+          // This sets the file name.
+          a.download = "bi_" + "_" + doccode + "_" + s_lang + "_" + t_lang + 
+            ".tmx";
+          a.href = downloadUrl;
+          // Actually perform the download.
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        } else { 
+          alert("Please align the document before saving the tmx file!");
+        }
     })
 });
 
+// using code from http://jsfiddle.net/X33px/2/
 $(document).on('click', 'a.add', function() {
   var val = $(this).parent().parent().next().html();
   $(this).parent().parent().next().replaceWith('<div class="cell">' +
