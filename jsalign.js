@@ -12,19 +12,38 @@ $(document).ready( function() {
         var clona = document.cloneNode(true);
 
         // some cleanup
+        
+        bucata asta se poate elimina daca rezolv cu tmx-ul
         var buttons = clona.getElementsByClassName('buttons');
         while (buttons.length > 0) {
           buttons[0].parentNode.removeChild(buttons[0]);
         }
         var divbutton = clona.getElementById('div-button');
         divbutton.parentNode.removeChild(divbutton);
+        
         var docinfo = clona.getElementById('doc-info');
         docinfo.parentNode.removeChild(docinfo);
         var links = clona.getElementsByClassName('links');
         while (links.length > 0) {
           links[0].parentNode.removeChild(links[0]);
         }
+        
+        source_strings = clona.getElementById('source-col').getElementsByClassName('celltext');
+        source_strings = $.map(source_strings, function(item) { 
+          return item.innerHTML; 
+        });
 
+        target_strings = clona.getElementById('target-col').getElementsByClassName('celltext');
+        target_strings = $.map(target_strings, function(item) { 
+          return item.innerHTML; 
+        });
+
+        // get info from meta
+        //TODO check for equal length
+        // add tmx header
+        // add tmx contents
+        // add footer        
+        
         var file = new window.Blob(
           [clona.documentElement.innerHTML], { type: "text/html" });
         var URL = window.webkitURL || window.URL;
