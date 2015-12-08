@@ -10,15 +10,15 @@ $(document).ready( function() {
         // get segments
         var source_strings = clona.getElementById(
           'source-col').getElementsByClassName('celltext');
-        source_strings = $.map(source_strings, function(item) { 
-          return item.innerHTML; 
+        source_strings = $.map(source_strings, function(item) {
+          return item.innerHTML;
         });
         var target_strings = clona.getElementById(
           'target-col').getElementsByClassName('celltext');
-        target_strings = $.map(target_strings, function(item) { 
-          return item.innerHTML; 
+        target_strings = $.map(target_strings, function(item) {
+          return item.innerHTML;
         });
-        
+
         //check for equal length of source and target segments
         if (source_strings.length === target_strings.length) {
           // get info from meta
@@ -29,20 +29,20 @@ $(document).ready( function() {
           // create new string variable
           var tmx = '';
           // add tmx header
-          tmx += '<?xml version="1.0" encoding="utf-8" ?>\n'
-          tmx += '<!DOCTYPE tmx SYSTEM "tmx14.dtd">\n'
-          tmx += '<tmx version="1.4">\n'
-          tmx += '  <header\n'
-          tmx += '    creationtool="eunlp"\n'
-          tmx += '    creationtoolversion="0.01"\n'
-          tmx += '    datatype="unknown"\n'
-          tmx += '    segtype="sentence"\n'
-          tmx += '    adminlang="' + s_lang + '"\n'
-          tmx += '    srclang="' + s_lang + '"\n'
-          tmx += '    o-tmf="TW4Win 2.0 Format"\n'
-          tmx += '  >\n'
-          tmx += '  </header>\n'
-          tmx += '  <body>\n'
+          tmx += '<?xml version="1.0" encoding="utf-8" ?>\n';
+          tmx += '<!DOCTYPE tmx SYSTEM "tmx14.dtd">\n';
+          tmx += '<tmx version="1.4">\n';
+          tmx += '  <header\n';
+          tmx += '    creationtool="eunlp"\n';
+          tmx += '    creationtoolversion="0.01"\n';
+          tmx += '    datatype="unknown"\n';
+          tmx += '    segtype="sentence"\n';
+          tmx += '    adminlang="' + s_lang + '"\n';
+          tmx += '    srclang="' + s_lang + '"\n';
+          tmx += '    o-tmf="TW4Win 2.0 Format"\n';
+          tmx += '  >\n';
+          tmx += '  </header>\n';
+          tmx += '  <body>\n';
           // add tmx contents
           // prepare "now" and "tag" variables
           // http://stackoverflow.com/questions/1531093/how-to-get-current-date-in-javascript
@@ -51,44 +51,44 @@ $(document).ready( function() {
           var mm = today.getMonth()+1; //January is 0!
           var yyyy = today.getFullYear();
           if(dd<10) {
-              dd='0'+dd
-          } 
+              dd='0'+dd;
+          }
           if(mm<10) {
-              mm='0'+mm
+              mm='0'+mm;
           }
           var hours = today.getHours();
           var minutes = today.getMinutes();
           var seconds = today.getSeconds();
           if(hours<10) {
-              hours='0'+hours
-          } 
+              hours='0'+hours;
+          }
           if(minutes<10) {
-              minutes='0'+minutes
+              minutes='0'+minutes;
           }
           if(seconds<10) {
-              seconds='0'+seconds
+              seconds='0'+seconds;
           }
-          var now = yyyy +  '' +  mm + '' + dd + "T" + 
-            + hours + minutes + seconds + "Z";
-          var tag = '<prop type="Txt::Alignment">Jsalign</prop>'
+          var now = yyyy +  '' +  mm + '' + dd + "T" +
+            hours + minutes + seconds + "Z";
+          var tag = '<prop type="Txt::Alignment">Jsalign</prop>';
           // use loop to add aligned segments to tmx
           var items = source_strings.length;
-          for (i = 0; i < items; i++) { 
+          for (i = 0; i < items; i++) {
             var tru = ''.concat('<tu creationdate="', now,
                        '" creationid="jsalign"><prop type="Txt::Note">',
-                       doccode, '</prop>', tag, '\n')
-            var tuv_source = ''.concat('<tuv xml:lang="', s_lang, '"><seg>', 
-              source_strings[i], '</seg></tuv>\n')
+                       doccode, '</prop>', tag, '\n');
+            var tuv_source = ''.concat('<tuv xml:lang="', s_lang, '"><seg>',
+              source_strings[i], '</seg></tuv>\n');
 
-            var tuv_target = ''.concat('<tuv xml:lang="', t_lang, '"><seg>', 
-              target_strings[i], '</seg></tuv> </tu>\n\n')
+            var tuv_target = ''.concat('<tuv xml:lang="', t_lang, '"><seg>',
+              target_strings[i], '</seg></tuv> </tu>\n\n');
             var oneline = ''.concat(tru, tuv_source, tuv_target);
             tmx += oneline;
           }
           // add footer
-          tmx += '\n'
-          tmx += '</body>\n'
-          tmx += '</tmx>'
+          tmx += '\n';
+          tmx += '</body>\n';
+          tmx += '</tmx>';
 
           // create blob
           var file = new window.Blob(
@@ -98,27 +98,27 @@ $(document).ready( function() {
           var downloadUrl = URL.createObjectURL(file);
           var a = document.createElement("a");
           // This sets the file name.
-          a.download = "bi_" + "_" + doccode + "_" + s_lang + "_" + t_lang + 
+          a.download = "bi_" + "_" + doccode + "_" + s_lang + "_" + t_lang +
             ".tmx";
           a.href = downloadUrl;
           // Actually perform the download.
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
-        } else { 
+        } else {
           alert("Please align the document before saving the tmx file!");
         }
-    })
+    });
 });
 
 // using code from http://jsfiddle.net/X33px/2/
 $(document).on('click', 'a.add', function() {
   var val = $(this).parent().parent().next().html();
   $(this).parent().parent().next().replaceWith('<div class="cell">' +
-    '<span class="buttons"><a class="button add" href="#">+ ↓</a>' + 
-    '<a class="button delete" href="#">Del</a>' + 
-    '<a href="#" class="button edit">Edit</a>' + 
-    '<a class="button merge" href="#">⛓ ↓</a></span>' + 
+    '<span class="buttons"><a class="button add" href="#">+ ↓</a>' +
+    '<a class="button delete" href="#">Del</a>' +
+    '<a href="#" class="button edit">Edit</a>' +
+    '<a class="button merge" href="#">⛓ ↓</a></span>' +
     '<span class="celltext"></span></div>' +
     '<div class="cell">' + val + '</div>');
   return false;
@@ -128,7 +128,7 @@ $(document).on('click', 'a.add', function() {
 $(document).on('click', 'a.delete', function() {
   if (window.confirm("Are you sure you want to delete this segment?")) {
     $(this).parent().parent().remove();
-  };
+  }
   return false;
 });
 
@@ -138,7 +138,7 @@ $(document).on('click', 'a.merge', function() {
     var val = $(this).parent().parent().next().children('span')[1].innerHTML;
     $(this).parent().parent().children('span')[1].innerHTML += " " + val;
     $(this).parent().parent().next().remove();
-  };
+  }
   return false;
 });
 
@@ -146,7 +146,7 @@ $(document).on('click', 'a.edit', function() {
   var val = $(this).parent().siblings('span').html();
   if (val === "") {
     val = "No text.";
-  };
+  }
   if (val) {
     $(this).parent().parent().append(
       '<textarea class="txt">' + val + '</textarea>');
@@ -154,7 +154,7 @@ $(document).on('click', 'a.edit', function() {
     $(this).html('Save');
   } else {
     var $txt = $(this).parent().siblings().filter(function() {
-      return $(this).hasClass('txt')
+      return $(this).hasClass('txt');
     });
     $(this).parent().parent().append(
       '<span class="celltext">' + $txt.val() + '</span>');
@@ -166,11 +166,11 @@ $(document).on('click', 'a.edit', function() {
 
 $(window).load(function(){
 $('div.cell').each(function() {
-  $(this).prepend('<span class="buttons">' + 
-    '<a class="button add" href="#">+ ↓</a>' + 
+  $(this).prepend('<span class="buttons">' +
+    '<a class="button add" href="#">+ ↓</a>' +
     '<a class="button delete" href="#">Del</a>' +
     ' <a href="#" class="button edit">Edit</a>' +
     '<a class="button merge" href="#">⛓ ↓</a></span>');
 });
 
-});//]]> 
+});//]]>
