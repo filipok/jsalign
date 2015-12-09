@@ -207,6 +207,7 @@ $(document).on('click', 'a.split', function() {
     $(this).parent().parent().removeAttr('id');
     $(this).parent().parent().removeAttr('onmouseup');
   }
+  return false;
 });
 
 $(document).on('click', 'a.merge', function() {
