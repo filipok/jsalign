@@ -45,8 +45,8 @@ function splitParaAtCaret() {
               p.nextSibling.insertBefore(span, first);
               p.removeAttribute("id");
               p.nextSibling.removeAttribute("id");
-              p.style.height = "70px";
-              p.nextSibling.style.height = "70px";
+              //p.style.height = "70px";
+              //p.nextSibling.style.height = "70px";
               var split_button = p.getElementsByClassName('split');
               split_button[0].style.background = "white";
               split_button[0].innerHTML = "⛌⛌";
@@ -197,13 +197,13 @@ $(document).on('click', 'a.split', function() {
     $(this).parent().parent().attr('onmouseup', 'splitParaAtCaret()');
     $(this).css('background', 'yellow');
     $(this).html('Split');
-    $(this).parent().parent().css('height', 'auto');
-    $(this).parent().parent().css('min-height', '70px');
+    //$(this).parent().parent().css('height', 'auto');
+    //$(this).parent().parent().css('min-height', '70px');
     return false;
   } else {
     $(this).css('background', 'white');
     $(this).html('⛌⛌');
-    $(this).parent().parent().css('height', '70px');
+    //$(this).parent().parent().css('height', '70px');
     $(this).parent().parent().removeAttr('id');
     $(this).parent().parent().removeAttr('onmouseup');
   }
