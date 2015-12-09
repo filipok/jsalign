@@ -221,8 +221,9 @@ $(document).on('click', 'a.edit', function() {
     val = "No text.";
   }
   if (val) {
+    $(this).parent().parent().css('height', 'auto');
     $(this).parent().parent().append(
-      '<textarea class="txt">' + val + '</textarea>');
+      '<textarea rows="4" class="txt">' + val + '</textarea>');
     $(this).parent().siblings('span').remove();
     $(this).html('Save');
   } else {
@@ -233,9 +234,12 @@ $(document).on('click', 'a.edit', function() {
       '<span class="celltext">' + $txt.val() + '</span>');
     $txt.remove();
     $(this).html('Edit');
+    $(this).parent().parent().css('height', '70px');
   }
   return false;
 });
+
+
 
 $(window).load(function(){
 $('div.cell').each(function() {
