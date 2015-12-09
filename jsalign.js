@@ -1,5 +1,59 @@
 //<![CDATA[
 
+// http://stackoverflow.com/questions/11111704/rangy-js-jquery-split-node
+function splitParaAtCaret() {
+    var sel = rangy.getSelection();
+    if (sel.rangeCount > 0) {
+        // Create a copy of the selection range to work with
+        var range = sel.getRangeAt(0).cloneRange();
+
+        // Get the containing paragraph
+        var p = range.commonAncestorContainer;
+        while (p && (p.nodeType != 1 || p.id != "active") ) {
+            p = p.parentNode;
+            //newdiv = document.createElement('span');
+            //p.insertBefore(newdiv, p.firstChild);
+        }
+
+        if (p) {
+            // Place the end of the range after the paragraph
+            range.setEndAfter(p);
+
+            // Extract the contents of the paragraph after the caret into a fragment
+            var contentAfterRangeStart = range.extractContents();
+
+            // Collapse the range immediately after the paragraph
+            range.collapseAfter(p);
+
+            // Insert the content
+            range.insertNode(contentAfterRangeStart);
+
+            // Move the caret to the insertion point
+            range.collapseAfter(p);
+            sel.setSingleRange(range);
+
+            // add span and disable function (additional code)
+            var s = '<a class="button add" href="#">+ ↓</a>' +
+              '<a class="button delete" href="#">Del</a>' +
+              ' <a href="#" class="button edit">Edit</a>' +
+              '<a class="button merge" href="#">⛓ ↓</a>' +
+              '<a class="button split" href="#">⛌⛌</a>';
+              var span = document.createElement('span');
+              span.innerHTML = s;
+              span.className = "buttons";
+              var first = p.nextSibling.firstChild;
+              p.nextSibling.insertBefore(span, first);
+              p.removeAttribute("id");
+              p.nextSibling.removeAttribute("id");
+              p.style.height = "70px";
+              p.nextSibling.style.height = "70px";
+              var split_button = p.getElementsByClassName('split');
+              split_button[0].style.background = "white";
+              split_button[0].innerHTML = "⛌⛌";
+        }
+    }
+}
+
 $(document).ready( function() {
     $('#save-button').click(function(){
 
@@ -119,6 +173,7 @@ $(document).on('click', 'a.add', function() {
     '<a class="button delete" href="#">Del</a>' +
     '<a href="#" class="button edit">Edit</a>' +
     '<a class="button merge" href="#">⛓ ↓</a></span>' +
+    '<a class="button split" href="#">⛌⛌</a></span>' +
     '<span class="celltext"></span></div>' +
     '<div class="cell">' + val + '</div>');
   return false;
@@ -130,6 +185,24 @@ $(document).on('click', 'a.delete', function() {
     $(this).parent().parent().remove();
   }
   return false;
+});
+
+$(document).on('click', 'a.split', function() {
+  if ($(this).html() === '⛌⛌') {
+    $(this).parent().parent().attr('id', 'active');
+    $(this).parent().parent().attr('onmouseup', 'splitParaAtCaret()');
+    $(this).css('background', 'yellow');
+    $(this).html('Split');
+    $(this).parent().parent().css('height', 'auto');
+    $(this).parent().parent().css('min-height', '70px');
+    return false;
+  } else {
+    $(this).css('background', 'white');
+    $(this).html('⛌⛌');
+    $(this).parent().parent().css('height', '70px');
+    $(this).parent().parent().removeAttr('id');
+    $(this).parent().parent().removeAttr('onmouseup');
+  }
 });
 
 $(document).on('click', 'a.merge', function() {
@@ -170,7 +243,8 @@ $('div.cell').each(function() {
     '<a class="button add" href="#">+ ↓</a>' +
     '<a class="button delete" href="#">Del</a>' +
     ' <a href="#" class="button edit">Edit</a>' +
-    '<a class="button merge" href="#">⛓ ↓</a></span>');
+    '<a class="button merge" href="#">⛓ ↓</a>' +
+    '<a class="button split" href="#">⛌⛌</a></span>');
 });
 
 });//]]>
