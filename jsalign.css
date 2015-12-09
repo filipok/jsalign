@@ -1,5 +1,4 @@
 .cell {
-  border-radius: 0px;
   background: #00FFFF;
   padding: 5px;
   height: 70px;
@@ -8,6 +7,12 @@
 }
 
 .button {
+  border-radius: 5px;
+  background: #00FF00;
+  border: 1px solid black;
+}
+
+.button-demo {
   border-radius: 5px;
   background: #00FF00;
   border: 1px solid black;
@@ -56,4 +61,23 @@ a:link {
 
 .merge {
   background: mediumturquoise;
+}
+.delete-demo {
+  background: orange;
+}
+
+.edit-demo {
+  background: yellow;
+}
+
+.merge-demo {
+  background: mediumturquoise;
+}
+
+.split-demo {
+  background: white;
+}
+
+.demo {
+  min-height: 20px;
 }
