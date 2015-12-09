@@ -35,7 +35,7 @@ function splitParaAtCaret() {
             // add span and disable function (additional code)
             var s = '<a class="button add" href="#">+ ↓</a>' +
               '<a class="button delete" href="#">Del</a>' +
-              ' <a href="#" class="button edit">Edit</a>' +
+              //' <a href="#" class="button edit">Edit</a>' +
               '<a class="button merge" href="#">⛓ ↓</a>' +
               '<a class="button split" href="#">⛌⛌</a>';
               var span = document.createElement('span');
@@ -55,6 +55,10 @@ function splitParaAtCaret() {
 }
 
 $(document).ready( function() {
+
+    // http://stackoverflow.com/questions/5601431/spellcheck-false-on-contenteditable-elements
+    document.body.setAttribute('spellcheck', false);
+
     $('#save-button').click(function(){
 
         // http://stackoverflow.com/questions/26689876/how-to-save-html-that-was-modified-on-the-browser-the-dom-with-javascript-jque
@@ -171,7 +175,7 @@ $(document).on('click', 'a.add', function() {
   $(this).parent().parent().next().replaceWith('<div class="cell">' +
     '<span class="buttons"><a class="button add" href="#">+ ↓</a>' +
     '<a class="button delete" href="#">Del</a>' +
-    '<a href="#" class="button edit">Edit</a>' +
+    //'<a href="#" class="button edit">Edit</a>' +
     '<a class="button merge" href="#">⛓ ↓</a></span>' +
     '<a class="button split" href="#">⛌⛌</a></span>' +
     '<span class="celltext"></span></div>' +
@@ -215,29 +219,30 @@ $(document).on('click', 'a.merge', function() {
   return false;
 });
 
-$(document).on('click', 'a.edit', function() {
-  var val = $(this).parent().siblings('span').html();
-  if (val === "") {
-    val = "No text.";
-  }
-  if (val) {
-    $(this).parent().parent().css('height', 'auto');
-    $(this).parent().parent().append(
-      '<textarea rows="4" class="txt">' + val + '</textarea>');
-    $(this).parent().siblings('span').remove();
-    $(this).html('Save');
-  } else {
-    var $txt = $(this).parent().siblings().filter(function() {
-      return $(this).hasClass('txt');
-    });
-    $(this).parent().parent().append(
-      '<span class="celltext">' + $txt.val() + '</span>');
-    $txt.remove();
-    $(this).html('Edit');
-    $(this).parent().parent().css('height', '70px');
-  }
-  return false;
-});
+// $(document).on('click', 'a.edit', function() {
+//   var val = $(this).parent().siblings('span').html();
+//   console.log(val);
+//   if (val === "") {
+//     val = "No text.";
+//   }
+//   if (val) {
+//     $(this).parent().parent().css('height', 'auto');
+//     $(this).parent().parent().append(
+//       '<textarea rows="4" class="txt">' + val + '</textarea>');
+//     $(this).parent().siblings('span').remove();
+//     $(this).html('Save');
+//   } else {
+//     var $txt = $(this).parent().siblings().filter(function() {
+//       return $(this).hasClass('txt');
+//     });
+//     $(this).parent().parent().append(
+//       '<span class="celltext">' + $txt.val() + '</span>');
+//     $txt.remove();
+//     $(this).html('Edit');
+//     $(this).parent().parent().css('height', '70px');
+//   }
+//   return false;
+// });
 
 
 
@@ -246,7 +251,7 @@ $('div.cell').each(function() {
   $(this).prepend('<span class="buttons">' +
     '<a class="button add" href="#">+ ↓</a>' +
     '<a class="button delete" href="#">Del</a>' +
-    ' <a href="#" class="button edit">Edit</a>' +
+    //' <a href="#" class="button edit">Edit</a>' +
     '<a class="button merge" href="#">⛓ ↓</a>' +
     '<a class="button split" href="#">⛌⛌</a></span>');
 });

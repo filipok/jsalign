@@ -86,3 +86,7 @@ a:link {
 .demo {
   min-height: 20px;
 }
+
+[contenteditable="true"]:focus {
+    color: red;
+}
