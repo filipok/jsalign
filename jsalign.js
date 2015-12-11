@@ -2,56 +2,39 @@
 
 // http://stackoverflow.com/questions/11111704/rangy-js-jquery-split-node
 function splitParaAtCaret() {
-    var sel = rangy.getSelection();
-    if (sel.rangeCount > 0) {
-        // Create a copy of the selection range to work with
-        var range = sel.getRangeAt(0).cloneRange();
-
-        // Get the containing paragraph
-        var p = range.commonAncestorContainer;
-        while (p && (p.nodeType != 1 || p.id != "active") ) {
-            p = p.parentNode;
-            //newdiv = document.createElement('span');
-            //p.insertBefore(newdiv, p.firstChild);
-        }
-
-        if (p) {
-            // Place the end of the range after the paragraph
-            range.setEndAfter(p);
-
-            // Extract the contents of the paragraph after the caret into a fragment
-            var contentAfterRangeStart = range.extractContents();
-
-            // Collapse the range immediately after the paragraph
-            range.collapseAfter(p);
-
-            // Insert the content
-            range.insertNode(contentAfterRangeStart);
-
-            // Move the caret to the insertion point
-            range.collapseAfter(p);
-            sel.setSingleRange(range);
-
-            // add span and disable function (additional code)
-            var s = '<a class="button add" href="#">+ ↓</a>' +
-              '<a class="button delete" href="#">Del</a>' +
-              //' <a href="#" class="button edit">Edit</a>' +
-              '<a class="button merge" href="#">⛓ ↓</a>' +
-              '<a class="button split" href="#">⛌⛌</a>';
-              var span = document.createElement('span');
-              span.innerHTML = s;
-              span.className = "buttons";
-              var first = p.nextSibling.firstChild;
-              p.nextSibling.insertBefore(span, first);
-              p.removeAttribute("id");
-              p.nextSibling.removeAttribute("id");
-              //p.style.height = "70px";
-              //p.nextSibling.style.height = "70px";
-              var split_button = p.getElementsByClassName('split');
-              split_button[0].style.background = "white";
-              split_button[0].innerHTML = "⛌⛌";
-        }
+  var sel = rangy.getSelection();
+  if (sel.rangeCount > 0) {
+    // Create a copy of the selection range to work with
+    var range = sel.getRangeAt(0).cloneRange();
+    // Get the containing paragraph
+    var p = range.commonAncestorContainer;
+    while (p && (p.nodeType != 1 || p.id != "active") ) {
+      p = p.parentNode;
     }
+    if (p) {
+      // Place the end of the range after the paragraph
+      range.setEndAfter(p);
+      // Extract the contents of the paragraph after the caret into a fragment
+      var contentAfterRangeStart = range.extractContents();
+      // Collapse the range immediately after the paragraph
+      range.collapseAfter(p);
+      // Insert the content
+      range.insertNode(contentAfterRangeStart);
+      // Move the caret to the insertion point
+      range.collapseAfter(p);
+      sel.setSingleRange(range);
+
+      // add span and disable function (additional code)
+      var span = createSpan();
+      var first = p.nextSibling.firstChild;
+      p.nextSibling.insertBefore(span, first);
+      p.removeAttribute("id");
+      p.nextSibling.removeAttribute("id");
+      var split_button = p.getElementsByClassName('split');
+      split_button[0].style.background = "white";
+      split_button[0].innerHTML = "⛌⛌";
+    }
+  }
 }
 
 $(document).ready( function() {
@@ -183,6 +166,45 @@ $(document).on('click', 'a.add', function() {
   return false;
 });
 
+function createSpan () {
+  var firstSpan = document.createElement("SPAN");
+  firstSpan.className = "buttons";
+
+  var addButton = document.createElement("A");
+  var linkText = document.createTextNode("+ ↓");
+  addButton.appendChild(linkText);
+  addButton.href = "#";
+  addButton.className = "button add";
+  addButton.addEventListener('click', addFunction);
+
+  var delButton = document.createElement("A");
+  linkText = document.createTextNode("Del");
+  delButton.appendChild(linkText);
+  delButton.href = "#";
+  delButton.className = "button delete";
+  delButton.addEventListener('click', deleteFunction, false);
+
+  var mergeButton = document.createElement("A");
+  linkText = document.createTextNode("⛓ ↓");
+  mergeButton.appendChild(linkText);
+  mergeButton.href = "#";
+  mergeButton.className = "button merge";
+  mergeButton.addEventListener('click', mergeFunction, false);
+
+  var splitButton = document.createElement("A");
+  linkText = document.createTextNode("⛌⛌");
+  splitButton.appendChild(linkText);
+  splitButton.href = "#";
+  splitButton.className = "button split";
+  splitButton.addEventListener('click', splitFunction, false);
+
+  firstSpan.appendChild(addButton);
+  firstSpan.appendChild(delButton);
+  firstSpan.appendChild(mergeButton);
+  firstSpan.appendChild(splitButton);
+
+  return firstSpan;
+}
 
 $(document).on('click', 'a.delete', function() {
   if (window.confirm("Are you sure you want to delete this segment?")) {
