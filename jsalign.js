@@ -1,6 +1,7 @@
 //<![CDATA[
 
 // http://stackoverflow.com/questions/11111704/rangy-js-jquery-split-node
+var colHeight = '70px';
 function splitParaAtCaret() {
   var sel = rangy.getSelection();
   if (sel.rangeCount > 0) {
@@ -29,7 +30,9 @@ function splitParaAtCaret() {
       var first = p.nextSibling.firstChild;
       p.nextSibling.insertBefore(span, first);
       p.removeAttribute("id");
+      p.style.height=colHeight;
       p.nextSibling.removeAttribute("id");
+      p.nextSibling.style.height=colHeight;
       var split_button = p.getElementsByClassName('split');
       split_button[0].style.background = "white";
       split_button[0].innerHTML = "⛌⛌";
@@ -274,10 +277,12 @@ function splitFunction (item) {
     item.parentNode.parentNode.setAttribute('id', 'active');
     item.parentNode.parentNode.setAttribute('onmouseup', 'splitParaAtCaret()');
     item.style.background='yellow';
+    item.parentNode.parentNode.style.height='auto';
     item.innerHTML = 'Split';
   } else {
     item.style.background='white';
     item.innerHTML = '⛌⛌';
+    item.parentNode.parentNode.style.height=colHeight;
     item.parentNode.parentNode.removeAttribute('id');
     item.parentNode.parentNode.removeAttribute('onmouseup');
   }
@@ -291,10 +296,12 @@ function splitFunctionWithListener () {
     this.parentNode.parentNode.setAttribute('id', 'active');
     this.parentNode.parentNode.setAttribute('onmouseup', 'splitParaAtCaret()');
     this.style.background='yellow';
+    this.parentNode.parentNode.style.height='auto';
     this.innerHTML = 'Split';
   } else {
     this.style.background='white';
     this.innerHTML = '⛌⛌';
+    this.parentNode.parentNode.style.height=colHeight;
     this.parentNode.parentNode.removeAttribute('id');
     this.parentNode.parentNode.removeAttribute('onmouseup');
   }
