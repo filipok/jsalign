@@ -254,6 +254,7 @@ function deleteFunctionWithListener() {
 
 function splitFunction (item) {
   if (item.innerHTML === '⛌⛌') {
+    item.parentNode.parentNode.getElementsByClassName('buttons')[0].onmousedown = function(){return false;};
     item.parentNode.parentNode.setAttribute('id', 'active');
     item.parentNode.parentNode.setAttribute('onmouseup', 'splitParaAtCaret()');
     item.style.background='yellow';
@@ -269,6 +270,7 @@ function splitFunction (item) {
 
 function splitFunctionWithListener () {
   if (this.innerHTML === '⛌⛌') {
+    this.parentNode.parentNode.getElementsByClassName('buttons')[0].onmousedown = function(){return false;};
     this.parentNode.parentNode.setAttribute('id', 'active');
     this.parentNode.parentNode.setAttribute('onmouseup', 'splitParaAtCaret()');
     this.style.background='yellow';
