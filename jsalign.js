@@ -2,6 +2,7 @@
 
 // http://stackoverflow.com/questions/11111704/rangy-js-jquery-split-node
 var colHeight = '70px';
+
 function splitParaAtCaret() {
   var sel = rangy.getSelection();
   if (sel.rangeCount > 0) {
@@ -31,8 +32,10 @@ function splitParaAtCaret() {
       p.nextSibling.insertBefore(span, first);
       p.removeAttribute("id");
       p.style.height=colHeight;
+      p.style.color='black';
       p.nextSibling.removeAttribute("id");
       p.nextSibling.style.height=colHeight;
+      p.nextSibling.style.color='black';
       var split_button = p.getElementsByClassName('split');
       split_button[0].style.background = "white";
       split_button[0].innerHTML = "⛌⛌";
@@ -279,12 +282,14 @@ function splitFunction (item) {
     item.style.background='yellow';
     item.parentNode.parentNode.style.height='auto';
     item.innerHTML = 'Split';
+    item.parentNode.parentNode.style.color='red';
   } else {
     item.style.background='white';
     item.innerHTML = '⛌⛌';
     item.parentNode.parentNode.style.height=colHeight;
     item.parentNode.parentNode.removeAttribute('id');
     item.parentNode.parentNode.removeAttribute('onmouseup');
+    item.parentNode.parentNode.style.color='black';
   }
   event.preventDefault();
 }
@@ -298,12 +303,14 @@ function splitFunctionWithListener () {
     this.style.background='yellow';
     this.parentNode.parentNode.style.height='auto';
     this.innerHTML = 'Split';
+    this.parentNode.parentNode.style.color='red';
   } else {
     this.style.background='white';
     this.innerHTML = '⛌⛌';
     this.parentNode.parentNode.style.height=colHeight;
     this.parentNode.parentNode.removeAttribute('id');
     this.parentNode.parentNode.removeAttribute('onmouseup');
+    this.parentNode.parentNode.style.color='black';
   }
   event.preventDefault();
 }
