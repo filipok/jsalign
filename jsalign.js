@@ -173,28 +173,28 @@ function createSpan () {
   addButton.appendChild(linkText);
   addButton.href = "#";
   addButton.className = "button add";
-  addButton.addEventListener('click', addFunction);
+  addButton.addEventListener('click', addFunctionWithListener, false);
 
   var delButton = document.createElement("A");
   linkText = document.createTextNode("Del");
   delButton.appendChild(linkText);
   delButton.href = "#";
   delButton.className = "button delete";
-  delButton.addEventListener('click', deleteFunction, false);
+  delButton.addEventListener('click', deleteFunctionWithListener, false);
 
   var mergeButton = document.createElement("A");
   linkText = document.createTextNode("⛓ ↓");
   mergeButton.appendChild(linkText);
   mergeButton.href = "#";
   mergeButton.className = "button merge";
-  mergeButton.addEventListener('click', mergeFunction, false);
+  mergeButton.addEventListener('click', mergeFunctionWithListener, false);
 
   var splitButton = document.createElement("A");
   linkText = document.createTextNode("⛌⛌");
   splitButton.appendChild(linkText);
   splitButton.href = "#";
   splitButton.className = "button split";
-  splitButton.addEventListener('click', splitFunction, false);
+  splitButton.addEventListener('click', splitFunctionWithListener, false);
 
   firstSpan.appendChild(addButton);
   firstSpan.appendChild(delButton);
@@ -204,7 +204,7 @@ function createSpan () {
   return firstSpan;
 }
 
-function addFunction() {
+function createNewCell() {
   var newCell = document.createElement("DIV");
   newCell.className = "cell";
 
@@ -218,22 +218,56 @@ function addFunction() {
 
   newCell.appendChild(firstSpan);
   newCell.appendChild(secSpan);
+  return newCell;
+}
 
+function addFunction(item) {
   //a..span.......div........td......
-  this.parentNode.parentNode.parentNode.insertBefore(
-    newCell,this.parentNode.parentNode.nextSibling);
-
+  item.parentNode.parentNode.parentNode.insertBefore(
+    createNewCell(),item.parentNode.parentNode.nextSibling);
   event.preventDefault();
 }
 
-function deleteFunction() {
+function addFunctionWithListener() {
+  //a..span.......div........td......
+  this.parentNode.parentNode.parentNode.insertBefore(
+    createNewCell(),this.parentNode.parentNode.nextSibling);
+  event.preventDefault();
+}
+
+
+function deleteFunction(item) {
   if (window.confirm("Are you sure you want to delete this segment?")) {
+    console.log(item);
+    item.parentNode.parentNode.remove();
+  }
+  event.preventDefault();
+}
+
+function deleteFunctionWithListener() {
+  if (window.confirm("Are you sure you want to delete this segment?")) {
+    console.log(this);
     this.parentNode.parentNode.remove();
   }
   event.preventDefault();
 }
 
-function splitFunction () {
+function splitFunction (item) {
+  if (item.innerHTML === '⛌⛌') {
+    item.parentNode.parentNode.setAttribute('id', 'active');
+    item.parentNode.parentNode.setAttribute('onmouseup', 'splitParaAtCaret()');
+    item.style.background='yellow';
+    item.innerHTML = 'Split';
+  } else {
+    item.style.background='white';
+    item.innerHTML = '⛌⛌';
+    item.parentNode.parentNode.removeAttribute('id');
+    item.parentNode.parentNode.removeAttribute('onmouseup');
+  }
+  event.preventDefault();
+}
+
+function splitFunctionWithListener () {
   if (this.innerHTML === '⛌⛌') {
     this.parentNode.parentNode.setAttribute('id', 'active');
     this.parentNode.parentNode.setAttribute('onmouseup', 'splitParaAtCaret()');
@@ -248,7 +282,17 @@ function splitFunction () {
   event.preventDefault();
 }
 
-function mergeFunction () {
+function mergeFunction (item) {
+  if (window.confirm(
+    "Are you sure you want to merge it with the following segment?")) {
+    var v = item.parentNode.parentNode.nextElementSibling.children[1].innerHTML;
+    item.parentNode.parentNode.children[1].innerHTML += " " + v;
+    item.parentNode.parentNode.nextElementSibling.remove();
+  }
+  event.preventDefault();
+}
+
+function mergeFunctionWithListener () {
   if (window.confirm(
     "Are you sure you want to merge it with the following segment?")) {
     var v = this.parentNode.parentNode.nextElementSibling.children[1].innerHTML;
@@ -259,10 +303,10 @@ function mergeFunction () {
 }
 
 function populateTable() {
-  var cells = document.getElementsByClassName("cell");
-  Array.prototype.map.call(cells, function(cell){
-    cell.insertBefore(createSpan(), cell.firstChild);
-  });
+  // var cells = document.getElementsByClassName("cell");
+  // Array.prototype.map.call(cells, function(cell){
+  //   cell.insertBefore(createSpan(), cell.firstChild);
+  // });
 
   // http://stackoverflow.com/questions/5601431/spellcheck-false-on-contenteditable-elements
   document.body.setAttribute('spellcheck', false);
