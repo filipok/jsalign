@@ -179,28 +179,28 @@ function createSpan () {
   addButton.appendChild(linkText);
   addButton.href = "#";
   addButton.className = "button add";
-  addButton.addEventListener('click', addFunctionWithListener, false);
+  addButton.addEventListener('click', addFunction.bind(null, addButton), false);
 
   var delButton = document.createElement("A");
   linkText = document.createTextNode("Del");
   delButton.appendChild(linkText);
   delButton.href = "#";
   delButton.className = "button delete";
-  delButton.addEventListener('click', deleteFunctionWithListener, false);
+  delButton.addEventListener('click', deleteFunction.bind(null, delButton), false);
 
   var mergeButton = document.createElement("A");
   linkText = document.createTextNode("⛓ ↓");
   mergeButton.appendChild(linkText);
   mergeButton.href = "#";
   mergeButton.className = "button merge";
-  mergeButton.addEventListener('click', mergeFunctionWithListener, false);
+  mergeButton.addEventListener('click', mergeFunction.bind(null, mergeButton), false);
 
   var splitButton = document.createElement("A");
   linkText = document.createTextNode("⛌⛌");
   splitButton.appendChild(linkText);
   splitButton.href = "#";
   splitButton.className = "button split";
-  splitButton.addEventListener('click', splitFunctionWithListener, false);
+  splitButton.addEventListener('click', splitFunction.bind(null, splitButton), false);
 
   firstSpan.appendChild(addButton);
   firstSpan.appendChild(delButton);
@@ -234,26 +234,12 @@ function addFunction(item) {
   event.preventDefault();
 }
 
-function addFunctionWithListener() {
-  //a..span.......div........td......
-  this.parentNode.parentNode.parentNode.insertBefore(
-    createNewCell(),this.parentNode.parentNode.nextSibling);
-  event.preventDefault();
-}
 
 
 function deleteFunction(item) {
   if (window.confirm("Are you sure you want to delete this segment?")) {
     console.log(item);
     item.parentNode.parentNode.remove();
-  }
-  event.preventDefault();
-}
-
-function deleteFunctionWithListener() {
-  if (window.confirm("Are you sure you want to delete this segment?")) {
-    console.log(this);
-    this.parentNode.parentNode.remove();
   }
   event.preventDefault();
 }
@@ -294,26 +280,6 @@ function splitFunction (item) {
   event.preventDefault();
 }
 
-function splitFunctionWithListener () {
-  if (this.innerHTML === '⛌⛌') {
-    this.parentNode.parentNode.getElementsByClassName('buttons')[0].onmousedown = function(){return false;};
-    moveCursor();
-    this.parentNode.parentNode.setAttribute('id', 'active');
-    this.parentNode.parentNode.setAttribute('onmouseup', 'splitParaAtCaret()');
-    this.style.background='yellow';
-    this.parentNode.parentNode.style.height='auto';
-    this.innerHTML = 'Split';
-    this.parentNode.parentNode.style.color='red';
-  } else {
-    this.style.background='white';
-    this.innerHTML = '⛌⛌';
-    this.parentNode.parentNode.style.height=colHeight;
-    this.parentNode.parentNode.removeAttribute('id');
-    this.parentNode.parentNode.removeAttribute('onmouseup');
-    this.parentNode.parentNode.style.color='black';
-  }
-  event.preventDefault();
-}
 
 function mergeFunction (item) {
   if (window.confirm(
@@ -325,15 +291,6 @@ function mergeFunction (item) {
   event.preventDefault();
 }
 
-function mergeFunctionWithListener () {
-  if (window.confirm(
-    "Are you sure you want to merge it with the following segment?")) {
-    var v = this.parentNode.parentNode.nextElementSibling.children[1].innerHTML;
-    this.parentNode.parentNode.children[1].innerHTML += " " + v;
-    this.parentNode.parentNode.nextElementSibling.remove();
-  }
-  event.preventDefault();
-}
 
 function populateTable() {
   // var cells = document.getElementsByClassName("cell");
