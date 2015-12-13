@@ -170,6 +170,83 @@ function saveAlignment() {
   }
 }
 
+function deleteFunction(item) {
+  var yesButton = document.createElement("A");
+  var linkText = document.createTextNode("Delete!");
+  yesButton.appendChild(linkText);
+  yesButton.href = "#";
+  yesButton.className = "button yes";
+  yesButton.addEventListener('click', yesDeleteFunction, false);
+
+  var noButton = document.createElement("A");
+  linkText = document.createTextNode("Cancel");
+  noButton.appendChild(linkText);
+  noButton.href = "#";
+  noButton.className = "button no";
+  noButton.addEventListener('click', noFunction, false);
+
+  item.parentNode.insertBefore(yesButton, item.parentNode.getElementsByClassName('merge')[0]);
+  item.parentNode.insertBefore(noButton, item.parentNode.getElementsByClassName('merge')[0]);
+  item.style.display = 'none';
+  item.parentNode.getElementsByClassName('add')[0].style.display = 'none';
+  item.parentNode.getElementsByClassName('merge')[0].style.display = 'none';
+  item.parentNode.getElementsByClassName('split')[0].style.display = 'none';
+
+  event.preventDefault();
+}
+
+function mergeFunction(item) {
+  var yesButton = document.createElement("A");
+  var linkText = document.createTextNode("Merge!");
+  yesButton.appendChild(linkText);
+  yesButton.href = "#";
+  yesButton.className = "button yes";
+  yesButton.addEventListener('click', yesMergeFunction, false);
+
+  var noButton = document.createElement("A");
+  linkText = document.createTextNode("Cancel");
+  noButton.appendChild(linkText);
+  noButton.href = "#";
+  noButton.className = "button no";
+  noButton.addEventListener('click', noFunction, false);
+
+  item.parentNode.insertBefore(yesButton, item.parentNode.getElementsByClassName('split')[0]);
+  item.parentNode.insertBefore(noButton, item.parentNode.getElementsByClassName('split')[0]);
+  item.style.display = 'none';
+  item.parentNode.getElementsByClassName('add')[0].style.display = 'none';
+  item.parentNode.getElementsByClassName('delete')[0].style.display = 'none';
+  item.parentNode.getElementsByClassName('split')[0].style.display = 'none';
+
+  event.preventDefault();
+}
+
+function yesDeleteFunction() {
+  this.parentNode.parentNode.remove();
+
+  event.preventDefault();
+}
+
+function yesMergeFunction() {
+  var v = this.parentNode.parentNode.nextElementSibling.children[1].innerHTML;
+  this.parentNode.parentNode.children[1].innerHTML += " " + v;
+  this.parentNode.parentNode.nextElementSibling.remove();
+
+  Array.prototype.map.call(this.parentNode.getElementsByClassName('button'),
+    function(button) {button.style.display = 'inline';});
+  this.parentNode.getElementsByClassName('no')[0].remove();
+  this.parentNode.getElementsByClassName('yes')[0].remove();
+
+  event.preventDefault();
+}
+
+function noFunction() {
+  Array.prototype.map.call(this.parentNode.getElementsByClassName('button'),
+    function(button) {button.style.display = 'inline';});
+  this.parentNode.getElementsByClassName('yes')[0].remove();
+  this.parentNode.getElementsByClassName('no')[0].remove();
+
+  event.preventDefault();
+}
 function createSpan () {
   var firstSpan = document.createElement("SPAN");
   firstSpan.className = "buttons";
@@ -234,16 +311,6 @@ function addFunction(item) {
   event.preventDefault();
 }
 
-
-
-function deleteFunction(item) {
-  if (window.confirm("Are you sure you want to delete this segment?")) {
-    console.log(item);
-    item.parentNode.parentNode.remove();
-  }
-  event.preventDefault();
-}
-
 function moveCursor() {
   // this function makes sure the cursor is not in the cell
   // source: http://jsfiddle.net/xgz6L/8/
@@ -279,18 +346,6 @@ function splitFunction (item) {
   }
   event.preventDefault();
 }
-
-
-function mergeFunction (item) {
-  if (window.confirm(
-    "Are you sure you want to merge it with the following segment?")) {
-    var v = item.parentNode.parentNode.nextElementSibling.children[1].innerHTML;
-    item.parentNode.parentNode.children[1].innerHTML += " " + v;
-    item.parentNode.parentNode.nextElementSibling.remove();
-  }
-  event.preventDefault();
-}
-
 
 function populateTable() {
   // var cells = document.getElementsByClassName("cell");
