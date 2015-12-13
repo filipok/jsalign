@@ -45,7 +45,7 @@ function splitParaAtCaret() {
 
 function createStrings(colname, docobject) {
   var col_strings = docobject.getElementById(
-      'source-col').getElementsByClassName('celltext');
+      colname).getElementsByClassName('celltext');
     col_strings = Array.prototype.map.call(col_strings, function(item){
       return item.innerHTML;
     });
