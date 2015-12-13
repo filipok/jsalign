@@ -1,8 +1,8 @@
 //<![CDATA[
 
-// http://stackoverflow.com/questions/11111704/rangy-js-jquery-split-node
 var colHeight = '70px';
 
+// http://stackoverflow.com/questions/11111704/rangy-js-jquery-split-node
 function splitParaAtCaret() {
   var sel = rangy.getSelection();
   if (sel.rangeCount > 0) {
@@ -247,6 +247,7 @@ function noFunction() {
 
   event.preventDefault();
 }
+
 function createSpan () {
   var firstSpan = document.createElement("SPAN");
   firstSpan.className = "buttons";
@@ -348,105 +349,12 @@ function splitFunction (item) {
 }
 
 function populateTable() {
-  // var cells = document.getElementsByClassName("cell");
-  // Array.prototype.map.call(cells, function(cell){
-  //   cell.insertBefore(createSpan(), cell.firstChild);
-  // });
-
   // http://stackoverflow.com/questions/5601431/spellcheck-false-on-contenteditable-elements
   document.body.setAttribute('spellcheck', false);
   document.getElementById('save-button').addEventListener('click', saveAlignment, false);
 }
 
 onload = populateTable;
-
-// $(document).ready( function() {
-//     $('#save-button').click(saveAlignment);
-// });
-
-// $(window).load(function(){
-// $('div.cell').each(function() {
-//   $(this).prepend(createSpan());
-// });
-
-// using code from http://jsfiddle.net/X33px/2/
-// $(document).on('click', 'a.add', function() {
-//   var val = $(this).parent().parent().next().html();
-//   $(this).parent().parent().next().replaceWith('<div class="cell">' +
-//     '<span class="buttons"><a class="button add" href="#">+ ↓</a>' +
-//     '<a class="button delete" href="#">Del</a>' +
-//     //'<a href="#" class="button edit">Edit</a>' +
-//     '<a class="button merge" href="#">⛓ ↓</a></span>' +
-//     '<a class="button split" href="#">⛌⛌</a></span>' +
-//     '<span class="celltext"></span></div>' +
-//     '<div class="cell">' + val + '</div>');
-//   return false;
-// });
-
-// $(document).on('click', 'a.delete', function() {
-//   if (window.confirm("Are you sure you want to delete this segment?")) {
-//     $(this).parent().parent().re#move();
-//   }
-//   return false;
-// });
-
-// $(document).on('click', 'a.split', function() {
-//   if ($(this).html() === '⛌⛌') {
-//     $(this).parent().parent().attr('id', 'active');
-//     $(this).parent().parent().attr('onmouseup', 'splitParaAtCaret()');
-//     $(this).css('background', 'yellow');
-//     $(this).html('Split');
-//     //$(this).parent().parent().css('height', 'auto');
-//     //$(this).parent().parent().css('min-height', '70px');
-//     return false;
-//   } else {
-//     $(this).css('background', 'white');
-//     $(this).html('⛌⛌');
-//     //$(this).parent().parent().css('height', '70px');
-//     $(this).parent().parent().removeAttr('id');
-//     $(this).parent().parent().removeAttr('onmouseup');
-//   }
-//   return false;
-// });
-
-// $(document).on('click', 'a.merge', function() {
-//   if (window.confirm(
-//     "Are you sure you want to merge it with the following segment?")) {
-//     var val = $(this).parent().parent().next().children('span')[1].innerHTML;
-//     $(this).parent().parent().children('span')[1].innerHTML += " " + val;
-//     $(this).parent().parent().next().remove();
-//   }
-//   return false;
-// });
-
-// $(document).on('click', 'a.edit', function() {
-//   var val = $(this).parent().siblings('span').html();
-//   console.log(val);
-//   if (val === "") {
-//     val = "No text.";
-//   }
-//   if (val) {
-//     $(this).parent().parent().css('height', 'auto');
-//     $(this).parent().parent().append(
-//       '<textarea rows="4" class="txt">' + val + '</textarea>');
-//     $(this).parent().siblings('span').remove();
-//     $(this).html('Save');
-//   } else {
-//     var $txt = $(this).parent().siblings().filter(function() {
-//       return $(this).hasClass('txt');
-//     });
-//     $(this).parent().parent().append(
-//       '<span class="celltext">' + $txt.val() + '</span>');
-//     $txt.remove();
-//     $(this).html('Edit');
-//     $(this).parent().parent().css('height', '70px');
-//   }
-//   return false;
-// });
-
-
-//});
-
 
 //]]>
 
