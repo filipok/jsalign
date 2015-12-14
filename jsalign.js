@@ -52,18 +52,7 @@ function createStrings(colname, docobject) {
     return col_strings;
 }
 
-function saveAlignment() {
-  // http://stackoverflow.com/questions/26689876/how-to-save-html-that-was-modified-on-the-browser-the-dom-with-javascript-jque
-
-  // Clone the DOM to extract the alignment information.
-  var clona = document.cloneNode(true);
-
-  // get segments
-  var source_strings = createStrings('source-col', clona);
-  var target_strings = createStrings('target-col', clona);
-
-  //check for equal length of source and target segments
-  if (source_strings.length === target_strings.length) {
+function getMeta() {
     // get info from meta
     // http://stackoverflow.com/questions/13451559/get-meta-attribute-content-by-selecting-property-attribute
     var metaTags=document.getElementsByTagName("meta");
@@ -83,10 +72,25 @@ function saveAlignment() {
         }
       }
     }
-    // var s_lang = $("meta[name='source-language']").attr("content");
-    // var t_lang = $("meta[name='target-language']").attr("content");
-    // var doccode = $("meta[name='doc-code']").attr("content");
-    // create new string variable
+    return [doccode, s_lang, t_lang];
+}
+
+function saveAlignment() {
+  // http://stackoverflow.com/questions/26689876/how-to-save-html-that-was-modified-on-the-browser-the-dom-with-javascript-jque
+
+  // Clone the DOM to extract the alignment information.
+  var clona = document.cloneNode(true);
+
+  // get segments
+  var source_strings = createStrings('source-col', clona);
+  var target_strings = createStrings('target-col', clona);
+
+  //check for equal length of source and target segments
+  if (source_strings.length === target_strings.length) {
+    var metas = getMeta();
+    var doccode = metas[0];
+    var s_lang = metas[1];
+    var t_lang = metas[2];
     var tmx = '';
     // add tmx header
     tmx += '<?xml version="1.0" encoding="utf-8" ?>\n';
@@ -168,6 +172,32 @@ function saveAlignment() {
   } else {
     alert("Please align the document before saving the tmx file!");
   }
+}
+
+function saveBackup() {
+  // Clone the DOM to extract the alignment information.
+  var clona = document.cloneNode(true);
+  var docContents = '<!DOCTYPE html>\n';
+  docContents += clona.documentElement.outerHTML;
+  // create blob
+  var file = new window.Blob(
+    [docContents], { type: "text/html" });
+  var URL = window.webkitURL || window.URL;
+  // This is the URL that will download the data.
+  var downloadUrl = URL.createObjectURL(file);
+  var a = document.createElement("a");
+  // This sets the file name.
+  var metas = getMeta();
+  var doccode = metas[0];
+  var s_lang = metas[1];
+  var t_lang = metas[2];
+  a.download = "backup_" + doccode + "_" + s_lang + "_" + t_lang +
+    ".html";
+  a.href = downloadUrl;
+  // Actually perform the download.
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 
 function deleteFunction(item) {
@@ -352,6 +382,7 @@ function populateTable() {
   // http://stackoverflow.com/questions/5601431/spellcheck-false-on-contenteditable-elements
   document.body.setAttribute('spellcheck', false);
   document.getElementById('save-button').addEventListener('click', saveAlignment, false);
+  document.getElementById('backup-button').addEventListener('click', saveBackup, false);
 }
 
 onload = populateTable;
