@@ -5,6 +5,12 @@
   min-height: 70px;
   border: 1px solid black;
   overflow: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
 }
 
 .button {
