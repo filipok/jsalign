@@ -37,8 +37,8 @@ function splitParaAtCaret() {
       p.nextSibling.style.height=colHeight;
       p.nextSibling.style.color='black';
       var split_button = p.getElementsByClassName('split');
-      split_button[0].style.background = "white";
-      split_button[0].innerHTML = "⛌⛌";
+      split_button[0].firstChild.className = 'glyphicon glyphicon-flash';
+      split_button[0].firstChild.innerHTML = '';
     }
   }
 }
@@ -205,14 +205,14 @@ function deleteFunction(item) {
   var linkText = document.createTextNode("Delete!");
   yesButton.appendChild(linkText);
   yesButton.href = "#";
-  yesButton.className = "button yes";
+  yesButton.className = "btn btn-danger btn-xs yes";
   yesButton.addEventListener('click', yesDeleteFunction, false);
 
   var noButton = document.createElement("A");
   linkText = document.createTextNode("Cancel");
   noButton.appendChild(linkText);
   noButton.href = "#";
-  noButton.className = "button no";
+  noButton.className = "btn btn-success btn-xs no";
   noButton.addEventListener('click', noFunction, false);
 
   item.parentNode.insertBefore(yesButton, item.parentNode.getElementsByClassName('merge')[0]);
@@ -230,14 +230,14 @@ function mergeFunction(item) {
   var linkText = document.createTextNode("Merge!");
   yesButton.appendChild(linkText);
   yesButton.href = "#";
-  yesButton.className = "button yes";
+  yesButton.className = "btn btn-info btn-xs yes";
   yesButton.addEventListener('click', yesMergeFunction, false);
 
   var noButton = document.createElement("A");
   linkText = document.createTextNode("Cancel");
   noButton.appendChild(linkText);
   noButton.href = "#";
-  noButton.className = "button no";
+  noButton.className = "btn btn-success btn-xs no";
   noButton.addEventListener('click', noFunction, false);
 
   item.parentNode.insertBefore(yesButton, item.parentNode.getElementsByClassName('split')[0]);
@@ -261,7 +261,7 @@ function yesMergeFunction() {
   this.parentNode.parentNode.children[1].innerHTML += " " + v;
   this.parentNode.parentNode.nextElementSibling.remove();
 
-  Array.prototype.map.call(this.parentNode.getElementsByClassName('button'),
+  Array.prototype.map.call(this.parentNode.getElementsByClassName('btn'),
     function(button) {button.style.display = 'inline';});
   this.parentNode.getElementsByClassName('no')[0].remove();
   this.parentNode.getElementsByClassName('yes')[0].remove();
@@ -270,7 +270,7 @@ function yesMergeFunction() {
 }
 
 function noFunction() {
-  Array.prototype.map.call(this.parentNode.getElementsByClassName('button'),
+  Array.prototype.map.call(this.parentNode.getElementsByClassName('btn'),
     function(button) {button.style.display = 'inline';});
   this.parentNode.getElementsByClassName('yes')[0].remove();
   this.parentNode.getElementsByClassName('no')[0].remove();
@@ -283,31 +283,35 @@ function createSpan () {
   firstSpan.className = "buttons";
 
   var addButton = document.createElement("A");
-  var linkText = document.createTextNode("+ ↓");
+  var linkText = document.createElement('span');
+  linkText.className = "glyphicon glyphicon-plus";
   addButton.appendChild(linkText);
   addButton.href = "#";
-  addButton.className = "button add";
+  addButton.className = "btn btn-success btn-xs add";
   addButton.addEventListener('click', addFunction.bind(null, addButton), false);
 
   var delButton = document.createElement("A");
-  linkText = document.createTextNode("Del");
+  linkText = document.createElement('span');
+  linkText.className = "glyphicon glyphicon-remove";
   delButton.appendChild(linkText);
   delButton.href = "#";
-  delButton.className = "button delete";
+  delButton.className = "btn btn-danger btn-xs delete";
   delButton.addEventListener('click', deleteFunction.bind(null, delButton), false);
 
   var mergeButton = document.createElement("A");
-  linkText = document.createTextNode("⛓ ↓");
+  linkText = document.createElement('span');
+  linkText.className = "glyphicon glyphicon-arrow-down";
   mergeButton.appendChild(linkText);
   mergeButton.href = "#";
-  mergeButton.className = "button merge";
+  mergeButton.className = "btn btn-info btn-xs merge";
   mergeButton.addEventListener('click', mergeFunction.bind(null, mergeButton), false);
 
   var splitButton = document.createElement("A");
-  linkText = document.createTextNode("⛌⛌");
+  linkText = document.createElement('span');
+  linkText.className = "glyphicon glyphicon-flash";
   splitButton.appendChild(linkText);
   splitButton.href = "#";
-  splitButton.className = "button split";
+  splitButton.className = "btn btn-warning btn-xs split";
   splitButton.addEventListener('click', splitFunction.bind(null, splitButton), false);
 
   firstSpan.appendChild(addButton);
@@ -358,18 +362,19 @@ function moveCursor() {
 }
 
 function splitFunction (item) {
-  if (item.innerHTML === '⛌⛌') {
+  if (item.firstChild.className === 'glyphicon glyphicon-flash') {
     item.parentNode.parentNode.getElementsByClassName('buttons')[0].onmousedown = function(){return false;};
     moveCursor();
     item.parentNode.parentNode.setAttribute('id', 'active');
     item.parentNode.parentNode.setAttribute('onmouseup', 'splitParaAtCaret()');
-    item.style.background='yellow';
     item.parentNode.parentNode.style.height='auto';
-    item.innerHTML = 'Split';
+    item.firstChild.className = '';
+    console.log(item.firstChild.className);
+    item.firstChild.innerHTML = 'Split';
     item.parentNode.parentNode.style.color='red';
   } else {
-    item.style.background='white';
-    item.innerHTML = '⛌⛌';
+    item.firstChild.className = 'glyphicon glyphicon-flash';
+    item.firstChild.innerHTML = '';
     item.parentNode.parentNode.style.height=colHeight;
     item.parentNode.parentNode.removeAttribute('id');
     item.parentNode.parentNode.removeAttribute('onmouseup');

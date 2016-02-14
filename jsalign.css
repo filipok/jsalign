@@ -13,30 +13,6 @@
   -moz-hyphens: auto;
 }
 
-.button {
-  border-radius: 5px;
-  background: #00FF00;
-  border: 1px solid black;
-}
-
-.yes {
-  border-radius: 0;
-  background: #FF4500;
-  margin-right: 1px;
-}
-
-.no {
-  border-radius: 0;
-  background: #7FFF00;
-  margin-left: 1px;
-}
-
-.button-demo {
-  border-radius: 5px;
-  background: #00FF00;
-  border: 1px solid black;
-}
-
 td,
 th {
   vertical-align: top;
@@ -54,52 +30,8 @@ th {
   margin-right: auto ;
 }
 
-#save-button {
-  width: 100px;
-  height: 50px;
-  font-size: 15px;
-  font-weight: bold;
-  background: #FF00FF;
-}
-
 #doc-info {
   font-weight: bold;
-}
-
-a:link {
-  text-decoration: none;
-}
-
-.delete {
-  background: orange;
-}
-
-.edit {
-  background: yellow;
-}
-
-.merge {
-  background: mediumturquoise;
-}
-
-.split {
-  background: white;
-}
-
-.delete-demo {
-  background: orange;
-}
-
-.edit-demo {
-  background: yellow;
-}
-
-.merge-demo {
-  background: mediumturquoise;
-}
-
-.split-demo {
-  background: white;
 }
 
 .demo {
