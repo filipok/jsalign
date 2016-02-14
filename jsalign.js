@@ -315,8 +315,11 @@ function createSpan () {
   splitButton.setAttribute("onclick", "splitFunction(this)");
 
   firstSpan.appendChild(addButton);
+  firstSpan.appendChild(document.createTextNode("\n"));
   firstSpan.appendChild(delButton);
+  firstSpan.appendChild(document.createTextNode("\n"));
   firstSpan.appendChild(mergeButton);
+  firstSpan.appendChild(document.createTextNode("\n"));
   firstSpan.appendChild(splitButton);
 
   return firstSpan;
