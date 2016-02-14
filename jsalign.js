@@ -288,7 +288,7 @@ function createSpan () {
   addButton.appendChild(linkText);
   addButton.href = "#";
   addButton.className = "btn btn-success btn-xs add";
-  addButton.addEventListener('click', addFunction.bind(null, addButton), false);
+  addButton.setAttribute("onclick", "addFunction(this)");
 
   var delButton = document.createElement("A");
   linkText = document.createElement('span');
@@ -296,7 +296,7 @@ function createSpan () {
   delButton.appendChild(linkText);
   delButton.href = "#";
   delButton.className = "btn btn-danger btn-xs delete";
-  delButton.addEventListener('click', deleteFunction.bind(null, delButton), false);
+  delButton.setAttribute("onclick", "deleteFunction(this)");
 
   var mergeButton = document.createElement("A");
   linkText = document.createElement('span');
@@ -304,7 +304,7 @@ function createSpan () {
   mergeButton.appendChild(linkText);
   mergeButton.href = "#";
   mergeButton.className = "btn btn-info btn-xs merge";
-  mergeButton.addEventListener('click', mergeFunction.bind(null, mergeButton), false);
+  mergeButton.setAttribute("onclick", "mergeFunction(this)");
 
   var splitButton = document.createElement("A");
   linkText = document.createElement('span');
@@ -312,7 +312,7 @@ function createSpan () {
   splitButton.appendChild(linkText);
   splitButton.href = "#";
   splitButton.className = "btn btn-warning btn-xs split";
-  splitButton.addEventListener('click', splitFunction.bind(null, splitButton), false);
+  splitButton.setAttribute("onclick", "splitFunction(this)");
 
   firstSpan.appendChild(addButton);
   firstSpan.appendChild(delButton);
