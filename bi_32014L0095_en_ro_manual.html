@@ -6,6 +6,14 @@
 <meta name="target-language" content="ro">
 <meta name="doc-code" content="32014L0095">
 <!-- <script class="links" type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script> -->
+<script type="text/javascript">
+   // https://developer.mozilla.org/en-US/docs/Web/Events/beforeunload
+   window.addEventListener("beforeunload", function (e) {
+   var confirmationMessage = "Do not close/refresh this window without exporting the TMX alignment (using the button at the end of the page) or saving a backup (using the button at the top of the page), otherwise you will lose your work.";
+   e.returnValue = confirmationMessage;
+   return confirmationMessage;
+   });
+</script>
 <script class="links" type="text/javascript" src="https://s3.eu-central-1.amazonaws.com/jsalign/0.2/jsalign.js"></script>
 <script class="links" type="text/javascript" src="https://rangy.googlecode.com/svn/trunk/currentrelease/rangy-core.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css">
@@ -175,7 +183,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">In its communication entitled ‘Single Market Act — Twelve levers to boost growth and strengthen confidence — “Working together to create new growth”’, adopted on 13 April 2011, the Commission identified the need to raise to a similarly high level across all Member States the transparency of the social and environmental information provided by undertakings in all sectors. This is fully consistent with the possibility for Member States to require, as appropriate, further improvements to the transparency of undertakings' non-financial information, which is by its nature a continuous endeavour.</span></div>
+<span class="celltext"  contenteditable="true">In its communication entitled ‘Single Market Act — Twelve levers to boost growth and strengthen confidence — “Working together to create new growth”’, adopted on 13 April 2011, the Commission identified the need to raise to a similarly high level across all Member States the transparency of the social and environmental information provided by undertakings in all sectors.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">This is fully consistent with the possibility for Member States to require, as appropriate, further improvements to the transparency of undertakings' non-financial information, which is by its nature a continuous endeavour.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -207,7 +223,31 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">In its resolutions of 6 February 2013 on, respectively, ‘Corporate Social Responsibility: accountable, transparent and responsible business behaviour and sustainable growth’ and ‘Corporate Social Responsibility: promoting society's interests and a route to sustainable and inclusive recovery’, the European Parliament acknowledged the importance of businesses divulging information on sustainability such as social and environmental factors, with a view to identifying sustainability risks and increasing investor and consumer trust. Indeed, disclosure of non-financial information is vital for managing change towards a sustainable global economy by combining long-term profitability with social justice and environmental protection. In this context, disclosure of non-financial information helps the measuring, monitoring and managing of undertakings' performance and their impact on society. Thus, the European Parliament called on the Commission to bring forward a legislative proposal on the disclosure of non-financial information by undertakings allowing for high flexibility of action, in order to take account of the multidimensional nature of corporate social responsibility (CSR) and the diversity of the CSR policies implemented by businesses matched by a sufficient level of comparability to meet the needs of investors and other stakeholders as well as the need to provide consumers with easy access to information on the impact of businesses on society.</span></div>
+<span class="celltext"  contenteditable="true">In its resolutions of 6 February 2013 on, respectively, ‘Corporate Social Responsibility: accountable, transparent and responsible business behaviour and sustainable growth’ and ‘Corporate Social Responsibility: promoting society's interests and a route to sustainable and inclusive recovery’, the European Parliament acknowledged the importance of businesses divulging information on sustainability such as social and environmental factors, with a view to identifying sustainability risks and increasing investor and consumer trust.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Indeed, disclosure of non-financial information is vital for managing change towards a sustainable global economy by combining long-term profitability with social justice and environmental protection.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">In this context, disclosure of non-financial information helps the measuring, monitoring and managing of undertakings' performance and their impact on society.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Thus, the European Parliament called on the Commission to bring forward a legislative proposal on the disclosure of non-financial information by undertakings allowing for high flexibility of action, in order to take account of the multidimensional nature of corporate social responsibility (CSR) and the diversity of the CSR policies implemented by businesses matched by a sufficient level of comparability to meet the needs of investors and other stakeholders as well as the need to provide consumers with easy access to information on the impact of businesses on society.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -223,7 +263,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">The coordination of national provisions concerning the disclosure of non-financial information in respect of certain large undertakings is of importance for the interests of undertakings, shareholders and other stakeholders alike. Coordination is necessary in those fields because most of those undertakings operate in more than one Member State.</span></div>
+<span class="celltext"  contenteditable="true">The coordination of national provisions concerning the disclosure of non-financial information in respect of certain large undertakings is of importance for the interests of undertakings, shareholders and other stakeholders alike.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Coordination is necessary in those fields because most of those undertakings operate in more than one Member State.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -239,7 +287,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">It is also necessary to establish a certain minimum legal requirement as regards the extent of the information that should be made available to the public and authorities by undertakings across the Union. The undertakings subject to this Directive should give a fair and comprehensive view of their policies, outcomes, and risks.</span></div>
+<span class="celltext"  contenteditable="true">It is also necessary to establish a certain minimum legal requirement as regards the extent of the information that should be made available to the public and authorities by undertakings across the Union.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">The undertakings subject to this Directive should give a fair and comprehensive view of their policies, outcomes, and risks.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -255,7 +311,31 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">In order to enhance the consistency and comparability of non-financial information disclosed throughout the Union, certain large undertakings should prepare a non-financial statement containing information relating to at least environmental matters, social and employee-related matters, respect for human rights, anti-corruption and bribery matters. Such statement should include a description of the policies, outcomes and risks related to those matters and should be included in the management report of the undertaking concerned. The non-financial statement should also include information on the due diligence processes implemented by the undertaking, also regarding, where relevant and proportionate, its supply and subcontracting chains, in order to identify, prevent and mitigate existing and potential adverse impacts. It should be possible for Member States to exempt undertakings which are subject to this Directive from the obligation to prepare a non-financial statement when a separate report corresponding to the same financial year and covering the same content is provided.</span></div>
+<span class="celltext"  contenteditable="true">In order to enhance the consistency and comparability of non-financial information disclosed throughout the Union, certain large undertakings should prepare a non-financial statement containing information relating to at least environmental matters, social and employee-related matters, respect for human rights, anti-corruption and bribery matters.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Such statement should include a description of the policies, outcomes and risks related to those matters and should be included in the management report of the undertaking concerned.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">The non-financial statement should also include information on the due diligence processes implemented by the undertaking, also regarding, where relevant and proportionate, its supply and subcontracting chains, in order to identify, prevent and mitigate existing and potential adverse impacts.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">It should be possible for Member States to exempt undertakings which are subject to this Directive from the obligation to prepare a non-financial statement when a separate report corresponding to the same financial year and covering the same content is provided.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -271,7 +351,23 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Where undertakings are required to prepare a non-financial statement, that statement should contain, as regards environmental matters, details of the current and foreseeable impacts of the undertaking's operations on the environment, and, as appropriate, on health and safety, the use of renewable and/or non-renewable energy, greenhouse gas emissions, water use and air pollution. As regards social and employee-related matters, the information provided in the statement may concern the actions taken to ensure gender equality, implementation of fundamental conventions of the International Labour Organisation, working conditions, social dialogue, respect for the right of workers to be informed and consulted, respect for trade union rights, health and safety at work and the dialogue with local communities, and/or the actions taken to ensure the protection and the development of those communities. With regard to human rights, anti-corruption and bribery, the non-financial statement could include information on the prevention of human rights abuses and/or on instruments in place to fight corruption and bribery.</span></div>
+<span class="celltext"  contenteditable="true">Where undertakings are required to prepare a non-financial statement, that statement should contain, as regards environmental matters, details of the current and foreseeable impacts of the undertaking's operations on the environment, and, as appropriate, on health and safety, the use of renewable and/or non-renewable energy, greenhouse gas emissions, water use and air pollution.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">As regards social and employee-related matters, the information provided in the statement may concern the actions taken to ensure gender equality, implementation of fundamental conventions of the International Labour Organisation, working conditions, social dialogue, respect for the right of workers to be informed and consulted, respect for trade union rights, health and safety at work and the dialogue with local communities, and/or the actions taken to ensure the protection and the development of those communities.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">With regard to human rights, anti-corruption and bribery, the non-financial statement could include information on the prevention of human rights abuses and/or on instruments in place to fight corruption and bribery.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -287,7 +383,31 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">The undertakings which are subject to this Directive should provide adequate information in relation to matters that stand out as being most likely to bring about the materialisation of principal risks of severe impacts, along with those that have already materialised. The severity of such impacts should be judged by their scale and gravity. The risks of adverse impact may stem from the undertaking's own activities or may be linked to its operations, and, where relevant and proportionate, its products, services and business relationships, including its supply and subcontracting chains. This should not lead to undue additional administrative burdens for small and medium-sized undertakings.</span></div>
+<span class="celltext"  contenteditable="true">The undertakings which are subject to this Directive should provide adequate information in relation to matters that stand out as being most likely to bring about the materialisation of principal risks of severe impacts, along with those that have already materialised.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">The severity of such impacts should be judged by their scale and gravity.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">The risks of adverse impact may stem from the undertaking's own activities or may be linked to its operations, and, where relevant and proportionate, its products, services and business relationships, including its supply and subcontracting chains.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">This should not lead to undue additional administrative burdens for small and medium-sized undertakings.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -319,7 +439,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Member States should ensure that adequate and effective means exist to guarantee disclosure of non-financial information by undertakings in compliance with this Directive. To that end, Member States should ensure that effective national procedures are in place to enforce compliance with the obligations laid down by this Directive, and that those procedures are available to all persons and legal entities having a legitimate interest, in accordance with national law, in ensuring that the provisions of this Directive are respected.</span></div>
+<span class="celltext"  contenteditable="true">Member States should ensure that adequate and effective means exist to guarantee disclosure of non-financial information by undertakings in compliance with this Directive.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">To that end, Member States should ensure that effective national procedures are in place to enforce compliance with the obligations laid down by this Directive, and that those procedures are available to all persons and legal entities having a legitimate interest, in accordance with national law, in ensuring that the provisions of this Directive are respected.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -335,7 +463,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Paragraph 47 of the outcome document of the United Nations Rio+20 conference, entitled ‘The Future We Want’, recognises the importance of corporate sustainability reporting and encourages undertakings, where appropriate, to consider integrating sustainability information into their reporting cycle. It also encourages industry, interested governments and relevant stakeholders with the support of the United Nations system, as appropriate, to develop models for best practice, and facilitate action for the integration of financial and non-financial information, taking into account experiences from already existing frameworks.</span></div>
+<span class="celltext"  contenteditable="true">Paragraph 47 of the outcome document of the United Nations Rio+20 conference, entitled ‘The Future We Want’, recognises the importance of corporate sustainability reporting and encourages undertakings, where appropriate, to consider integrating sustainability information into their reporting cycle.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">It also encourages industry, interested governments and relevant stakeholders with the support of the United Nations system, as appropriate, to develop models for best practice, and facilitate action for the integration of financial and non-financial information, taking into account experiences from already existing frameworks.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -367,7 +503,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">The European Council, in its conclusions of 24 and 25 March 2011, called for the overall regulatory burden, in particular for small and medium-sized enterprises (‘SMEs’), to be reduced at both European and national levels, and suggested measures to increase productivity, while the Europe 2020 Strategy for smart, sustainable and inclusive growth aims to improve the business environment for SMEs and to promote their internationalisation. Thus, in accordance with the ‘think small first’ principle, the new disclosure requirements should apply only to certain large undertakings and groups.</span></div>
+<span class="celltext"  contenteditable="true">The European Council, in its conclusions of 24 and 25 March 2011, called for the overall regulatory burden, in particular for small and medium-sized enterprises (‘SMEs’), to be reduced at both European and national levels, and suggested measures to increase productivity, while the Europe 2020 Strategy for smart, sustainable and inclusive growth aims to improve the business environment for SMEs and to promote their internationalisation.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Thus, in accordance with the ‘think small first’ principle, the new disclosure requirements should apply only to certain large undertakings and groups.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -383,7 +527,23 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">The scope of those non-financial disclosure requirements should be defined by reference to the average number of employees, balance sheet total and net turnover. SMEs should be exempted from additional requirements, and the obligation to disclose a non-financial statement should apply only to those large undertakings which are public-interest entities and to those public-interest entities which are parent undertakings of a large group, in each case having an average number of employees in excess of 500, in the case of a group on a consolidated basis. This should not prevent Member States from requiring disclosure of non-financial information from undertakings and groups other than undertakings which are subject to this Directive.</span></div>
+<span class="celltext"  contenteditable="true">The scope of those non-financial disclosure requirements should be defined by reference to the average number of employees, balance sheet total and net turnover.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">SMEs should be exempted from additional requirements, and the obligation to disclose a non-financial statement should apply only to those large undertakings which are public-interest entities and to those public-interest entities which are parent undertakings of a large group, in each case having an average number of employees in excess of 500, in the case of a group on a consolidated basis.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">This should not prevent Member States from requiring disclosure of non-financial information from undertakings and groups other than undertakings which are subject to this Directive.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -399,7 +559,23 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Many of the undertakings which fall within the scope of Directive 2013/34/EU of the European Parliament and of the Council (3) are members of groups of undertakings. Consolidated management reports should be drawn up so that the information concerning such groups of undertakings may be conveyed to members and third parties. National law governing consolidated management reports should therefore be coordinated in order to achieve the objectives of comparability and consistency of the information which undertakings should publish within the Union.</span></div>
+<span class="celltext"  contenteditable="true">Many of the undertakings which fall within the scope of Directive 2013/34/EU of the European Parliament and of the Council (3) are members of groups of undertakings.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Consolidated management reports should be drawn up so that the information concerning such groups of undertakings may be conveyed to members and third parties.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">National law governing consolidated management reports should therefore be coordinated in order to achieve the objectives of comparability and consistency of the information which undertakings should publish within the Union.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -415,7 +591,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Statutory auditors and audit firms should only check that the non-financial statement or the separate report has been provided. In addition, it should be possible for Member States to require that the information included in the non-financial statement or in the separate report be verified by an independent assurance services provider.</span></div>
+<span class="celltext"  contenteditable="true">Statutory auditors and audit firms should only check that the non-financial statement or the separate report has been provided.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">In addition, it should be possible for Member States to require that the information included in the non-financial statement or in the separate report be verified by an independent assurance services provider.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -431,7 +615,31 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">With a view to facilitating the disclosure of non-financial information by undertakings, the Commission should prepare non-binding guidelines, including general and sectoral non-financial key performance indicators. The Commission should take into account current best practices, international developments and the results of related Union initiatives. The Commission should carry out appropriate consultations, including with relevant stakeholders. When referring to environmental aspects, the Commission should cover at least land use, water use, greenhouse gas emissions and the use of materials.</span></div>
+<span class="celltext"  contenteditable="true">With a view to facilitating the disclosure of non-financial information by undertakings, the Commission should prepare non-binding guidelines, including general and sectoral non-financial key performance indicators.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">The Commission should take into account current best practices, international developments and the results of related Union initiatives.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">The Commission should carry out appropriate consultations, including with relevant stakeholders.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">When referring to environmental aspects, the Commission should cover at least land use, water use, greenhouse gas emissions and the use of materials.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -447,7 +655,39 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Diversity of competences and views of the members of administrative, management and supervisory bodies of undertakings facilitates a good understanding of the business organisation and affairs of the undertaking concerned. It enables members of those bodies to constructively challenge the management decisions and to be more open to innovative ideas, addressing the similarity of views of members, also known as the ‘group-think’ phenomenon. It contributes thus to effective oversight of the management and to successful governance of the undertaking. It is therefore important to enhance transparency regarding the diversity policy applied. This would inform the market of corporate governance practices and thus put indirect pressure on undertakings to have more diversified boards.</span></div>
+<span class="celltext"  contenteditable="true">Diversity of competences and views of the members of administrative, management and supervisory bodies of undertakings facilitates a good understanding of the business organisation and affairs of the undertaking concerned.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">It enables members of those bodies to constructively challenge the management decisions and to be more open to innovative ideas, addressing the similarity of views of members, also known as the ‘group-think’ phenomenon.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">It contributes thus to effective oversight of the management and to successful governance of the undertaking.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">It is therefore important to enhance transparency regarding the diversity policy applied.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">This would inform the market of corporate governance practices and thus put indirect pressure on undertakings to have more diversified boards.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -463,7 +703,23 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">The obligation to disclose diversity policies in relation to the administrative, management and supervisory bodies with regard to aspects such as, for instance, age, gender or educational and professional backgrounds should apply only to certain large undertakings. Disclosure of the diversity policy should be part of the corporate governance statement, as laid down by Article 20 of Directive 2013/34/EU. If no diversity policy is applied there should not be any obligation to put one in place, but the corporate governance statement should include a clear explanation as to why this is the case.</span></div>
+<span class="celltext"  contenteditable="true">The obligation to disclose diversity policies in relation to the administrative, management and supervisory bodies with regard to aspects such as, for instance, age, gender or educational and professional backgrounds should apply only to certain large undertakings.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Disclosure of the diversity policy should be part of the corporate governance statement, as laid down by Article 20 of Directive 2013/34/EU.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">If no diversity policy is applied there should not be any obligation to put one in place, but the corporate governance statement should include a clear explanation as to why this is the case.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -479,7 +735,23 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Initiatives at Union level, including country-by-country reporting for several sectors, as well as the references made by the European Council, in its conclusions of 22 May 2013 and of 19 and 20 December 2013, to country-by-country reporting by large companies and groups, similar provisions in Directive 2013/36/EU of the European Parliament and of the Council (4), and international efforts to improve transparency in financial reporting have been noted. Within the context of the G8 and the G20, the OECD has been asked to draw up a standardised reporting template for multinational undertakings to report to tax authorities where they make their profits and pay taxes around the world. Such developments complement the proposals contained in this Directive, as appropriate measures for their respective purposes.</span></div>
+<span class="celltext"  contenteditable="true">Initiatives at Union level, including country-by-country reporting for several sectors, as well as the references made by the European Council, in its conclusions of 22 May 2013 and of 19 and 20 December 2013, to country-by-country reporting by large companies and groups, similar provisions in Directive 2013/36/EU of the European Parliament and of the Council (4), and international efforts to improve transparency in financial reporting have been noted.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Within the context of the G8 and the G20, the OECD has been asked to draw up a standardised reporting template for multinational undertakings to report to tax authorities where they make their profits and pay taxes around the world.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Such developments complement the proposals contained in this Directive, as appropriate measures for their respective purposes.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -495,7 +767,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Since the objective of this Directive, namely to increase the relevance, consistency and comparability of information disclosed by certain large undertakings and groups across the Union, cannot be sufficiently achieved by the Member States but can rather, by reason of its effect, be better achieved at Union level, the Union may adopt measures, in accordance with the principle of subsidiarity as set out in Article 5 of the Treaty on European Union. In accordance with the principle of proportionality as set out in that Article, this Directive does not go beyond what is necessary in order to achieve that objective.</span></div>
+<span class="celltext"  contenteditable="true">Since the objective of this Directive, namely to increase the relevance, consistency and comparability of information disclosed by certain large undertakings and groups across the Union, cannot be sufficiently achieved by the Member States but can rather, by reason of its effect, be better achieved at Union level, the Union may adopt measures, in accordance with the principle of subsidiarity as set out in Article 5 of the Treaty on European Union.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">In accordance with the principle of proportionality as set out in that Article, this Directive does not go beyond what is necessary in order to achieve that objective.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -511,7 +791,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">This Directive respects the fundamental rights and observes the principles recognised in particular by the Charter of Fundamental Rights of the European Union, including freedom to conduct a business, respect for private life and the protection of personal data. This Directive has to be implemented in accordance with those rights and principles.</span></div>
+<span class="celltext"  contenteditable="true">This Directive respects the fundamental rights and observes the principles recognised in particular by the Charter of Fundamental Rights of the European Union, including freedom to conduct a business, respect for private life and the protection of personal data.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">This Directive has to be implemented in accordance with those rights and principles.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -839,7 +1127,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Member States may require that the information in the non-financial statement referred to in paragraph 1 or in the separate report referred to in paragraph 4 be verified by an independent assurance services provider.’. (2)</span></div>
+<span class="celltext"  contenteditable="true">Member States may require that the information in the non-financial statement referred to in paragraph 1 or in the separate report referred to in paragraph 4 be verified by an independent assurance services provider.’.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">(2)</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -879,7 +1175,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">a description of the diversity policy applied in relation to the undertaking's administrative, management and supervisory bodies with regard to aspects such as, for instance, age, gender, or educational and professional backgrounds, the objectives of that diversity policy, how it has been implemented and the results in the reporting period. If no such policy is applied, the statement shall contain an explanation as to why this is the case.’</span></div>
+<span class="celltext"  contenteditable="true">a description of the diversity policy applied in relation to the undertaking's administrative, management and supervisory bodies with regard to aspects such as, for instance, age, gender, or educational and professional backgrounds, the objectives of that diversity policy, how it has been implemented and the results in the reporting period.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">If no such policy is applied, the statement shall contain an explanation as to why this is the case.’</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -911,7 +1215,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">‘3. The statutory auditor or audit firm shall express an opinion in accordance with the second subparagraph of Article 34(1) regarding information prepared under points (c) and (d) of paragraph 1 of this Article and shall check that the information referred to in points (a), (b), (e), (f) and (g) of paragraph 1 of this Article has been provided.’; (c)</span></div>
+<span class="celltext"  contenteditable="true">‘3.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">The statutory auditor or audit firm shall express an opinion in accordance with the second subparagraph of Article 34(1) regarding information prepared under points (c) and (d) of paragraph 1 of this Article and shall check that the information referred to in points (a), (b), (e), (f) and (g) of paragraph 1 of this Article has been provided.’; (c)</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -927,7 +1239,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">‘4. Member States may exempt undertakings referred to in paragraph 1 which have only issued securities other than shares admitted to trading on a regulated market within the meaning of point (14) of Article 4(1) of Directive 2004/39/EC from the application of points (a), (b), (e), (f) and (g) of paragraph 1 of this Article, unless such undertakings have issued shares which are traded in a multilateral trading facility within the meaning of point (15) of Article 4(1) of Directive 2004/39/EC.’; (d)</span></div>
+<span class="celltext"  contenteditable="true">‘4.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Member States may exempt undertakings referred to in paragraph 1 which have only issued securities other than shares admitted to trading on a regulated market within the meaning of point (14) of Article 4(1) of Directive 2004/39/EC from the application of points (a), (b), (e), (f) and (g) of paragraph 1 of this Article, unless such undertakings have issued shares which are traded in a multilateral trading facility within the meaning of point (15) of Article 4(1) of Directive 2004/39/EC.’; (d)</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -943,7 +1263,23 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">‘5. Notwithstanding Article 40, point (g) of paragraph 1 shall not apply to small and medium-sized undertakings.’. (3)</span></div>
+<span class="celltext"  contenteditable="true">‘5.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Notwithstanding Article 40, point (g) of paragraph 1 shall not apply to small and medium-sized undertakings.’.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">(3)</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1215,7 +1551,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Member States may require that the information in the consolidated non-financial statement referred to in paragraph 1 or in the separate report referred to in paragraph 4 be verified by an independent assurance services provider.’. (4)</span></div>
+<span class="celltext"  contenteditable="true">Member States may require that the information in the consolidated non-financial statement referred to in paragraph 1 or in the separate report referred to in paragraph 4 be verified by an independent assurance services provider.’.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">(4)</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1231,7 +1575,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">‘1. Member States shall ensure that the members of the administrative, management and supervisory bodies of an undertaking, acting within the competences assigned to them by national law, have collective responsibility for ensuring that:</span></div>
+<span class="celltext"  contenteditable="true">‘1.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Member States shall ensure that the members of the administrative, management and supervisory bodies of an undertaking, acting within the competences assigned to them by national law, have collective responsibility for ensuring that:</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1271,7 +1623,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">are drawn up and published in accordance with the requirements of this Directive and, where applicable, with the international accounting standards adopted in accordance with Regulation (EC) No 1606/2002.’. (5)</span></div>
+<span class="celltext"  contenteditable="true">are drawn up and published in accordance with the requirements of this Directive and, where applicable, with the international accounting standards adopted in accordance with Regulation (EC) No 1606/2002.’.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">(5)</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1287,7 +1647,23 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">‘3. This Article shall not apply to the non-financial statement referred to in Article 19a(1) and the consolidated non-financial statement referred to in Article 29a(1) or to the separate reports referred to in Articles 19a(4) and 29a(4).’. (6)</span></div>
+<span class="celltext"  contenteditable="true">‘3.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">This Article shall not apply to the non-financial statement referred to in Article 19a(1) and the consolidated non-financial statement referred to in Article 29a(1) or to the separate reports referred to in Articles 19a(4) and 29a(4).’.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">(6)</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1303,7 +1679,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">‘The report shall also consider, taking into account developments in the OECD and the results of related European initiatives, the possibility of introducing an obligation requiring large undertakings to produce on an annual basis a country-by-country report for each Member State and third country in which they operate, containing information on, as a minimum, profits made, taxes paid on profits and public subsidies received.’. Article 2</span></div>
+<span class="celltext"  contenteditable="true">‘The report shall also consider, taking into account developments in the OECD and the results of related European initiatives, the possibility of introducing an obligation requiring large undertakings to produce on an annual basis a country-by-country report for each Member State and third country in which they operate, containing information on, as a minimum, profits made, taxes paid on profits and public subsidies received.’.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Article 2</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1319,7 +1703,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">The Commission shall prepare non-binding guidelines on methodology for reporting non-financial information, including non-financial key performance indicators, general and sectoral, with a view to facilitating relevant, useful and comparable disclosure of non-financial information by undertakings. In doing so, the Commission shall consult relevant stakeholders.</span></div>
+<span class="celltext"  contenteditable="true">The Commission shall prepare non-binding guidelines on methodology for reporting non-financial information, including non-financial key performance indicators, general and sectoral, with a view to facilitating relevant, useful and comparable disclosure of non-financial information by undertakings.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">In doing so, the Commission shall consult relevant stakeholders.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1351,7 +1743,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">The Commission shall submit a report to the European Parliament and to the Council on the implementation of this Directive, including, among other aspects, its scope, particularly as regards large non-listed undertakings, its effectiveness and the level of guidance and methods provided. The report shall be published by 6 December 2018 and shall be accompanied, if appropriate, by legislative proposals.</span></div>
+<span class="celltext"  contenteditable="true">The Commission shall submit a report to the European Parliament and to the Council on the implementation of this Directive, including, among other aspects, its scope, particularly as regards large non-listed undertakings, its effectiveness and the level of guidance and methods provided.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">The report shall be published by 6 December 2018 and shall be accompanied, if appropriate, by legislative proposals.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1383,7 +1783,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Member States shall bring into force the laws, regulations and administrative provisions necessary to comply with this Directive by 6 December 2016. They shall immediately inform the Commission thereof.</span></div>
+<span class="celltext"  contenteditable="true">Member States shall bring into force the laws, regulations and administrative provisions necessary to comply with this Directive by 6 December 2016.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">They shall immediately inform the Commission thereof.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1399,7 +1807,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">When Member States adopt those provisions, they shall contain a reference to this Directive or shall be accompanied by such reference on the occasion of their official publication. The methods of making such reference shall be laid down by Member States.</span></div>
+<span class="celltext"  contenteditable="true">When Member States adopt those provisions, they shall contain a reference to this Directive or shall be accompanied by such reference on the occasion of their official publication.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">The methods of making such reference shall be laid down by Member States.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1737,7 +2153,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">În Comunicarea intitulată „Actul privind piața unică — Douăsprezece pârghii pentru stimularea creșterii și întărirea încrederii — «Împreună pentru o nouă creștere»”, adoptată la 13 aprilie 2011, Comisia a identificat necesitatea de a crește la un nivel înalt și comparabil în toate statele membre transparența informațiilor sociale și de mediu furnizate de întreprinderile din toate sectoarele. Această măsură este în deplină concordanță cu posibilitatea statelor membre de a solicita, după caz, noi îmbunătățiri în ceea ce privește transparența informațiilor nefinanciare ale întreprinderilor, ceea ce, prin natura sa, este un efort continuu.</span></div>
+<span class="celltext"  contenteditable="true">În Comunicarea intitulată „Actul privind piața unică — Douăsprezece pârghii pentru stimularea creșterii și întărirea încrederii — «Împreună pentru o nouă creștere»”, adoptată la 13 aprilie 2011, Comisia a identificat necesitatea de a crește la un nivel înalt și comparabil în toate statele membre transparența informațiilor sociale și de mediu furnizate de întreprinderile din toate sectoarele.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Această măsură este în deplină concordanță cu posibilitatea statelor membre de a solicita, după caz, noi îmbunătățiri în ceea ce privește transparența informațiilor nefinanciare ale întreprinderilor, ceea ce, prin natura sa, este un efort continuu.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1769,7 +2193,31 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">În rezoluțiile sale din 6 februarie 2013 referitoare la „Responsabilitatea socială a întreprinderilor: un comportament responsabil și transparent al întreprinderilor și o creștere economică durabilă” și, respectiv, la „Responsabilitatea socială a întreprinderilor: promovarea intereselor societății și a unei căi spre o redresare economică sustenabilă și cuprinzătoare”, Parlamentul European a confirmat importanța dezvăluirii de către întreprinderi a informațiilor privind sustenabilitatea, cum ar fi factorii sociali și de mediu, cu scopul de a identifica riscurile legate de sustenabilitate și de a crește încrederea investitorilor și a consumatorilor. Prezentarea de informații nefinanciare este, într-adevăr, un element determinant pentru gestionarea tranziției către o economie sustenabilă la nivel mondial, care să combine profitabilitatea pe termen lung cu justiția socială și protecția mediului. În acest context, prezentarea de informații nefinanciare contribuie la măsurarea, monitorizarea și gestionarea performanțelor întreprinderilor și a impactului lor asupra societății. Astfel, Parlamentul European a invitat Comisia să prezinte o propunere legislativă privind prezentarea de informații nefinanciare de către întreprinderi, permițând un nivel ridicat de flexibilitate în acțiune, pentru a se ține seama de natura multidimensională a responsabilității sociale a întreprinderilor (RSI) și de diversitatea politicilor în materie de RSI aplicate de întreprinderi, asociate cu un nivel suficient de comparabilitate, pentru a satisface nevoile investitorilor și ale altor părți interesate, precum și nevoia de a le asigura consumatorilor un acces facil la informațiile privind impactul întreprinderilor asupra societății.</span></div>
+<span class="celltext"  contenteditable="true">În rezoluțiile sale din 6 februarie 2013 referitoare la „Responsabilitatea socială a întreprinderilor: un comportament responsabil și transparent al întreprinderilor și o creștere economică durabilă” și, respectiv, la „Responsabilitatea socială a întreprinderilor: promovarea intereselor societății și a unei căi spre o redresare economică sustenabilă și cuprinzătoare”, Parlamentul European a confirmat importanța dezvăluirii de către întreprinderi a informațiilor privind sustenabilitatea, cum ar fi factorii sociali și de mediu, cu scopul de a identifica riscurile legate de sustenabilitate și de a crește încrederea investitorilor și a consumatorilor.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Prezentarea de informații nefinanciare este, într-adevăr, un element determinant pentru gestionarea tranziției către o economie sustenabilă la nivel mondial, care să combine profitabilitatea pe termen lung cu justiția socială și protecția mediului.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">În acest context, prezentarea de informații nefinanciare contribuie la măsurarea, monitorizarea și gestionarea performanțelor întreprinderilor și a impactului lor asupra societății.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Astfel, Parlamentul European a invitat Comisia să prezinte o propunere legislativă privind prezentarea de informații nefinanciare de către întreprinderi, permițând un nivel ridicat de flexibilitate în acțiune, pentru a se ține seama de natura multidimensională a responsabilității sociale a întreprinderilor (RSI) și de diversitatea politicilor în materie de RSI aplicate de întreprinderi, asociate cu un nivel suficient de comparabilitate, pentru a satisface nevoile investitorilor și ale altor părți interesate, precum și nevoia de a le asigura consumatorilor un acces facil la informațiile privind impactul întreprinderilor asupra societății.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1785,7 +2233,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Coordonarea dispozițiilor de drept intern privind prezentarea de informații nefinanciare în ceea ce privește anumite întreprinderi mari prezintă importanță pentru interesele întreprinderilor, ale acționarilor și ale altor părți interesate. Coordonarea în aceste domenii este necesară deoarece majoritatea acestor întreprinderi își desfășoară activitatea în mai multe state membre.</span></div>
+<span class="celltext"  contenteditable="true">Coordonarea dispozițiilor de drept intern privind prezentarea de informații nefinanciare în ceea ce privește anumite întreprinderi mari prezintă importanță pentru interesele întreprinderilor, ale acționarilor și ale altor părți interesate.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Coordonarea în aceste domenii este necesară deoarece majoritatea acestor întreprinderi își desfășoară activitatea în mai multe state membre.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1801,7 +2257,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">De asemenea, este necesar să se stabilească anumite cerințe juridice minime în ceea ce privește amploarea informațiilor care ar trebui puse la dispoziția publicului și a autorităților de către întreprinderile din întreaga Uniune. Întreprinderile care intră sub incidența prezentei directive ar trebui să ofere o imagine de ansamblu echitabilă și cuprinzătoare a politicilor, rezultatelor și riscurilor lor.</span></div>
+<span class="celltext"  contenteditable="true">De asemenea, este necesar să se stabilească anumite cerințe juridice minime în ceea ce privește amploarea informațiilor care ar trebui puse la dispoziția publicului și a autorităților de către întreprinderile din întreaga Uniune.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Întreprinderile care intră sub incidența prezentei directive ar trebui să ofere o imagine de ansamblu echitabilă și cuprinzătoare a politicilor, rezultatelor și riscurilor lor.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1817,7 +2281,31 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">În scopul de a spori consecvența și comparabilitatea informațiilor nefinanciare prezentate în întreaga Uniune, anumite întreprinderi mari ar trebui să întocmească o declarație nefinanciară care să conțină informații privind cel puțin aspectele de mediu, sociale și de personal, respectarea drepturilor omului, combaterea corupției și a dării de mită. O astfel de declarație ar trebui să includă o descriere a politicilor, a rezultatelor și a riscurilor legate de aceste aspecte și ar trebui să fie integrată în raportul de gestiune al întreprinderii în cauză. Declarația nefinanciară ar trebui să includă, de asemenea, informații privind politicile de diligență necesară aplicate de întreprindere, precum și, atunci când este relevant și proporțional, lanțurile de aprovizionare și de subcontractare ale acesteia, pentru a identifica, a preveni și a reduce impacturile negative existente și potențiale. Statele membre ar trebui să aibă posibilitatea de a scuti întreprinderile care fac obiectul prezentei directive de obligația de a întocmi o declarație nefinanciară în cazurile în care acestea prezintă un raport separat corespunzător aceluiași exercițiu financiar și cu un conținut care acoperă aceleași subiecte.</span></div>
+<span class="celltext"  contenteditable="true">În scopul de a spori consecvența și comparabilitatea informațiilor nefinanciare prezentate în întreaga Uniune, anumite întreprinderi mari ar trebui să întocmească o declarație nefinanciară care să conțină informații privind cel puțin aspectele de mediu, sociale și de personal, respectarea drepturilor omului, combaterea corupției și a dării de mită.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">O astfel de declarație ar trebui să includă o descriere a politicilor, a rezultatelor și a riscurilor legate de aceste aspecte și ar trebui să fie integrată în raportul de gestiune al întreprinderii în cauză.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Declarația nefinanciară ar trebui să includă, de asemenea, informații privind politicile de diligență necesară aplicate de întreprindere, precum și, atunci când este relevant și proporțional, lanțurile de aprovizionare și de subcontractare ale acesteia, pentru a identifica, a preveni și a reduce impacturile negative existente și potențiale.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Statele membre ar trebui să aibă posibilitatea de a scuti întreprinderile care fac obiectul prezentei directive de obligația de a întocmi o declarație nefinanciară în cazurile în care acestea prezintă un raport separat corespunzător aceluiași exercițiu financiar și cu un conținut care acoperă aceleași subiecte.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1833,7 +2321,23 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">În cazul în care întreprinderile au obligația de a întocmi o declarație nefinanciară, declarația respectivă ar trebui să conțină, în ceea ce privește aspectele legate de mediu, detalii privind impactul actual și previzibil al operațiunilor întreprinderii asupra mediului și, după caz, asupra sănătății și a siguranței, utilizarea de energie regenerabilă și neregenerabilă, emisiile de gaze cu efect de seră, utilizarea apei și poluarea aerului. În ceea ce privește aspectele sociale și de personal, informațiile furnizate în declarație se pot referi la acțiunile întreprinse pentru a asigura egalitatea de gen, punerea în aplicare a convențiilor fundamentale ale Organizației Internaționale a Muncii, condițiile de muncă, dialogul social, respectarea dreptului lucrătorilor de a fi informați și consultați, respectarea drepturilor sindicale, sănătatea și siguranța la locul de muncă, dialogul cu comunitățile locale și/sau acțiunile întreprinse pentru a asigura protecția și dezvoltarea acestor comunități. În ceea ce privește drepturile omului, combaterea corupției și a dării de mită, declarația nefinanciară poate include informații privind prevenirea abuzurilor în materie de drepturile omului și/sau privind instrumentele instituite pentru combaterea corupției și a dării de mită.</span></div>
+<span class="celltext"  contenteditable="true">În cazul în care întreprinderile au obligația de a întocmi o declarație nefinanciară, declarația respectivă ar trebui să conțină, în ceea ce privește aspectele legate de mediu, detalii privind impactul actual și previzibil al operațiunilor întreprinderii asupra mediului și, după caz, asupra sănătății și a siguranței, utilizarea de energie regenerabilă și neregenerabilă, emisiile de gaze cu efect de seră, utilizarea apei și poluarea aerului.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">În ceea ce privește aspectele sociale și de personal, informațiile furnizate în declarație se pot referi la acțiunile întreprinse pentru a asigura egalitatea de gen, punerea în aplicare a convențiilor fundamentale ale Organizației Internaționale a Muncii, condițiile de muncă, dialogul social, respectarea dreptului lucrătorilor de a fi informați și consultați, respectarea drepturilor sindicale, sănătatea și siguranța la locul de muncă, dialogul cu comunitățile locale și/sau acțiunile întreprinse pentru a asigura protecția și dezvoltarea acestor comunități.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">În ceea ce privește drepturile omului, combaterea corupției și a dării de mită, declarația nefinanciară poate include informații privind prevenirea abuzurilor în materie de drepturile omului și/sau privind instrumentele instituite pentru combaterea corupției și a dării de mită.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1849,7 +2353,31 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Întreprinderile care fac obiectul prezentei directive ar trebui să ofere informații adecvate privind aspectele care ies în evidență ca implicând cea mai mare probabilitate de materializare a principalelor riscuri de impact important, precum și privind cele care s-au materializat deja. Importanța impactului ar trebui analizată în funcție de amploarea și gravitatea sa. Riscurile de impact negativ pot proveni din activitățile proprii ale întreprinderii sau pot fi legate de operațiunile ei și, atunci când este relevant și proporțional, de produsele, serviciile și relațiile ei de afaceri, inclusiv lanțurile ei de aprovizionare și subcontractare. Această informare nu ar trebui să conducă la obligații administrative suplimentare inutile în sarcina întreprinderilor mici și mijlocii.</span></div>
+<span class="celltext"  contenteditable="true">Întreprinderile care fac obiectul prezentei directive ar trebui să ofere informații adecvate privind aspectele care ies în evidență ca implicând cea mai mare probabilitate de materializare a principalelor riscuri de impact important, precum și privind cele care s-au materializat deja.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Importanța impactului ar trebui analizată în funcție de amploarea și gravitatea sa.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Riscurile de impact negativ pot proveni din activitățile proprii ale întreprinderii sau pot fi legate de operațiunile ei și, atunci când este relevant și proporțional, de produsele, serviciile și relațiile ei de afaceri, inclusiv lanțurile ei de aprovizionare și subcontractare.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Această informare nu ar trebui să conducă la obligații administrative suplimentare inutile în sarcina întreprinderilor mici și mijlocii.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1881,7 +2409,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Statele membre ar trebui să ia măsuri pentru crearea unor mecanisme adecvate și eficace care să garanteze prezentarea de informații nefinanciare de către întreprinderi în conformitate cu prezenta directivă. În acest sens, statele membre ar trebui să se asigure că există proceduri naționale eficace pentru a impune respectarea obligațiilor stabilite prin prezenta directivă, precum și că aceste proceduri sunt accesibile tuturor persoanelor fizice sau juridice care au un interes legitim, în conformitate cu dreptul național, ca dispozițiile prezentei directive să fie respectate.</span></div>
+<span class="celltext"  contenteditable="true">Statele membre ar trebui să ia măsuri pentru crearea unor mecanisme adecvate și eficace care să garanteze prezentarea de informații nefinanciare de către întreprinderi în conformitate cu prezenta directivă.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">În acest sens, statele membre ar trebui să se asigure că există proceduri naționale eficace pentru a impune respectarea obligațiilor stabilite prin prezenta directivă, precum și că aceste proceduri sunt accesibile tuturor persoanelor fizice sau juridice care au un interes legitim, în conformitate cu dreptul național, ca dispozițiile prezentei directive să fie respectate.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1897,7 +2433,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Punctul 47 din documentul final al Conferinței Organizației Națiunilor Unite Rio+20, intitulat „Viitorul pe care ni-l dorim”, recunoaște importanța raportării de informații privind sustenabilitatea întreprinderilor și încurajează întreprinderile, după caz, să ia în considerare integrarea informațiilor privind sustenabilitatea în ciclul lor de raportare. De asemenea, încurajează industria, guvernele interesate și părțile interesate relevante, cu sprijinul sistemului Organizației Națiunilor Unite, după caz, să elaboreze modele pentru cele mai bune practici și să faciliteze acțiunile de integrare a informațiilor financiare și nefinanciare, ținând seama de experiențele din cadrele deja existente.</span></div>
+<span class="celltext"  contenteditable="true">Punctul 47 din documentul final al Conferinței Organizației Națiunilor Unite Rio+20, intitulat „Viitorul pe care ni-l dorim”, recunoaște importanța raportării de informații privind sustenabilitatea întreprinderilor și încurajează întreprinderile, după caz, să ia în considerare integrarea informațiilor privind sustenabilitatea în ciclul lor de raportare.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">De asemenea, încurajează industria, guvernele interesate și părțile interesate relevante, cu sprijinul sistemului Organizației Națiunilor Unite, după caz, să elaboreze modele pentru cele mai bune practici și să faciliteze acțiunile de integrare a informațiilor financiare și nefinanciare, ținând seama de experiențele din cadrele deja existente.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1929,7 +2473,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Consiliul European, în concluziile sale din 24 și 25 martie 2011, a făcut apel la reducerea sarcinilor de reglementare în ansamblu, în special pentru întreprinderile mici și mijlocii (IMM-uri), atât la nivel european, cât și la nivel național, și a sugerat măsuri menite să crească productivitatea, în timp ce Strategia Europa 2020 pentru o creștere inteligentă, durabilă și favorabilă incluziunii urmărește să îmbunătățească mediul de afaceri pentru IMM-uri și să promoveze internaționalizarea acestora. Astfel, în conformitate cu principiul „a gândi mai întâi la scară mică”, noile cerințe de prezentare de informații ar trebui să se aplice numai anumitor întreprinderi și grupuri mari.</span></div>
+<span class="celltext"  contenteditable="true">Consiliul European, în concluziile sale din 24 și 25 martie 2011, a făcut apel la reducerea sarcinilor de reglementare în ansamblu, în special pentru întreprinderile mici și mijlocii (IMM-uri), atât la nivel european, cât și la nivel național, și a sugerat măsuri menite să crească productivitatea, în timp ce Strategia Europa 2020 pentru o creștere inteligentă, durabilă și favorabilă incluziunii urmărește să îmbunătățească mediul de afaceri pentru IMM-uri și să promoveze internaționalizarea acestora.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Astfel, în conformitate cu principiul „a gândi mai întâi la scară mică”, noile cerințe de prezentare de informații ar trebui să se aplice numai anumitor întreprinderi și grupuri mari.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1945,7 +2497,23 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Domeniul de aplicare a acestor cerințe de prezentare de informații nefinanciare ar trebui să fie definit în raport cu numărul mediu de angajați, totalul bilanțului și cifra de afaceri netă. IMM-urile ar trebui să fie scutite de cerințe suplimentare, iar obligația de a prezenta o declarație nefinanciară ar trebui să se aplice numai întreprinderilor mari care sunt entități de interes public și entităților de interes public care sunt întreprinderi-mamă ale unui grup mare, cu un număr mediu de angajați de peste 500 în ambele cazuri, în cazul unui grup pe bază consolidată. Această dispoziție nu ar trebui să împiedice statele membre să solicite întreprinderilor și grupurilor, altele decât întreprinderile care fac obiectul prezentei directive, prezentarea de informații nefinanciare.</span></div>
+<span class="celltext"  contenteditable="true">Domeniul de aplicare a acestor cerințe de prezentare de informații nefinanciare ar trebui să fie definit în raport cu numărul mediu de angajați, totalul bilanțului și cifra de afaceri netă.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">IMM-urile ar trebui să fie scutite de cerințe suplimentare, iar obligația de a prezenta o declarație nefinanciară ar trebui să se aplice numai întreprinderilor mari care sunt entități de interes public și entităților de interes public care sunt întreprinderi-mamă ale unui grup mare, cu un număr mediu de angajați de peste 500 în ambele cazuri, în cazul unui grup pe bază consolidată.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Această dispoziție nu ar trebui să împiedice statele membre să solicite întreprinderilor și grupurilor, altele decât întreprinderile care fac obiectul prezentei directive, prezentarea de informații nefinanciare.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1961,7 +2529,23 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Multe dintre întreprinderile care intră în domeniul de aplicare a Directivei 2013/34/UE a Parlamentului European și a Consiliului (3) sunt membre ale unor grupuri de întreprinderi. Rapoartele consolidate de gestiune ar trebui să fie întocmite astfel încât informațiile privind aceste întreprinderi să poată fi transmise membrilor și părților terțe. Legislațiile naționale privind rapoartele de gestiune consolidate ar trebui, prin urmare, să fie coordonate pentru realizarea obiectivelor de comparabilitate și coerență a informațiilor pe care întreprinderile ar trebui să le publice în Uniune.</span></div>
+<span class="celltext"  contenteditable="true">Multe dintre întreprinderile care intră în domeniul de aplicare a Directivei 2013/34/UE a Parlamentului European și a Consiliului (3) sunt membre ale unor grupuri de întreprinderi.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Rapoartele consolidate de gestiune ar trebui să fie întocmite astfel încât informațiile privind aceste întreprinderi să poată fi transmise membrilor și părților terțe.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Legislațiile naționale privind rapoartele de gestiune consolidate ar trebui, prin urmare, să fie coordonate pentru realizarea obiectivelor de comparabilitate și coerență a informațiilor pe care întreprinderile ar trebui să le publice în Uniune.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1977,7 +2561,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Auditorii statutari și firmele de audit ar trebui să verifice doar dacă s-a pus la dispoziție declarația nefinanciară sau raportul separat. În plus, statele membre ar trebui să aibă posibilitatea de a prevedea obligația ca informațiile cuprinse în declarația nefinanciară sau în raportul separat să fie verificate de un prestator independent de servicii de asigurare.</span></div>
+<span class="celltext"  contenteditable="true">Auditorii statutari și firmele de audit ar trebui să verifice doar dacă s-a pus la dispoziție declarația nefinanciară sau raportul separat.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">În plus, statele membre ar trebui să aibă posibilitatea de a prevedea obligația ca informațiile cuprinse în declarația nefinanciară sau în raportul separat să fie verificate de un prestator independent de servicii de asigurare.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -1993,7 +2585,31 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Pentru a facilita prezentarea de informații nefinanciare de către întreprinderi, Comisia ar trebui să elaboreze orientări fără caracter obligatoriu, inclusiv indicatori-cheie generali și sectoriali de performanță nefinanciară. Comisia ar trebui să țină seama de cele mai bune practici, de evoluțiile internaționale și de rezultatele unor inițiative conexe la nivel european. Comisia ar trebui să organizeze consultări adecvate, inclusiv cu părțile interesate relevante. În ceea ce privește aspectele de mediu, Comisia ar trebui să vizeze cel puțin utilizarea terenurilor, utilizarea apei, emisiile de gaze cu efect de seră și utilizarea materialelor.</span></div>
+<span class="celltext"  contenteditable="true">Pentru a facilita prezentarea de informații nefinanciare de către întreprinderi, Comisia ar trebui să elaboreze orientări fără caracter obligatoriu, inclusiv indicatori-cheie generali și sectoriali de performanță nefinanciară.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Comisia ar trebui să țină seama de cele mai bune practici, de evoluțiile internaționale și de rezultatele unor inițiative conexe la nivel european.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Comisia ar trebui să organizeze consultări adecvate, inclusiv cu părțile interesate relevante.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">În ceea ce privește aspectele de mediu, Comisia ar trebui să vizeze cel puțin utilizarea terenurilor, utilizarea apei, emisiile de gaze cu efect de seră și utilizarea materialelor.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -2009,7 +2625,39 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Diversitatea competențelor și a punctelor de vedere ale membrilor organelor administrative, de conducere și de supraveghere ale întreprinderilor facilitează o bună înțelegere a organizării și a afacerilor întreprinderii în cauză. Aceasta permite, de exemplu, ca membrii acestor organe să critice în mod constructiv deciziile de management și să fie mai deschiși către idei inovatoare, combătând problema similarității punctelor de vedere, fenomen cunoscut sub numele de „gândire de grup”. Astfel, aceasta contribuie la o supraveghere eficace a managementului și la o guvernanță de succes a întreprinderii. Prin urmare, este importantă îmbunătățirea transparenței în ceea ce privește politica de diversitate aplicată. Astfel, piața ar fi informată cu privire la practicile de guvernanță corporativă și, prin urmare, s-ar pune presiune indirectă asupra întreprinderilor pentru alegerea unui personal de conducere mai diversificat.</span></div>
+<span class="celltext"  contenteditable="true">Diversitatea competențelor și a punctelor de vedere ale membrilor organelor administrative, de conducere și de supraveghere ale întreprinderilor facilitează o bună înțelegere a organizării și a afacerilor întreprinderii în cauză.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Aceasta permite, de exemplu, ca membrii acestor organe să critice în mod constructiv deciziile de management și să fie mai deschiși către idei inovatoare, combătând problema similarității punctelor de vedere, fenomen cunoscut sub numele de „gândire de grup”.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Astfel, aceasta contribuie la o supraveghere eficace a managementului și la o guvernanță de succes a întreprinderii.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Prin urmare, este importantă îmbunătățirea transparenței în ceea ce privește politica de diversitate aplicată.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Astfel, piața ar fi informată cu privire la practicile de guvernanță corporativă și, prin urmare, s-ar pune presiune indirectă asupra întreprinderilor pentru alegerea unui personal de conducere mai diversificat.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -2025,7 +2673,23 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Obligația de a prezenta politicile de diversitate în raport cu organele administrative, de conducere și de supraveghere în ceea ce privește aspecte ca, de exemplu, vârsta, genul sau educația și experiența profesională ar trebui să se aplice numai anumitor întreprinderi mari. Prezentarea politicii de diversitate ar trebui să facă parte din declarația de guvernanță corporativă prevăzută la articolul 20 din Directiva 2013/34/UE. Dacă nu se aplică o politică de diversitate, nu ar trebui să existe nicio obligație de a pune în aplicare o astfel de politică, însă declarația de guvernanță corporativă ar trebui să includă o explicație clară a motivelor în acest sens.</span></div>
+<span class="celltext"  contenteditable="true">Obligația de a prezenta politicile de diversitate în raport cu organele administrative, de conducere și de supraveghere în ceea ce privește aspecte ca, de exemplu, vârsta, genul sau educația și experiența profesională ar trebui să se aplice numai anumitor întreprinderi mari.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Prezentarea politicii de diversitate ar trebui să facă parte din declarația de guvernanță corporativă prevăzută la articolul 20 din Directiva 2013/34/UE.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Dacă nu se aplică o politică de diversitate, nu ar trebui să existe nicio obligație de a pune în aplicare o astfel de politică, însă declarația de guvernanță corporativă ar trebui să includă o explicație clară a motivelor în acest sens.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -2041,7 +2705,23 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">S-a luat act de inițiativele de la nivelul Uniunii, inclusiv raportarea pentru fiecare țară în parte cu privire la mai multe sectoare, precum și de trimiterile făcute la 22 mai 2013 și la 19 și 20 decembrie 2013 de Consiliul European, în concluziile sale, la raportarea pentru fiecare țară în parte realizată de societățile și grupurile mari, de dispozițiile similare ale Directivei 2013/36/UE a Parlamentului European și a Consiliului (4) și de eforturile depuse la nivel internațional pentru a îmbunătăți transparența în raportarea financiară. În contextul G8 și G20, OCDE a fost invitată să elaboreze un model standardizat de raportare pentru ca întreprinderile multinaționale să poată raporta autorităților fiscale în ce țări înregistrează profit și în ce țări plătesc impozit, în întreaga lume. Astfel de evoluții vin în completarea propunerilor din prezenta directivă ca măsuri adecvate în raport cu obiectivele urmărite.</span></div>
+<span class="celltext"  contenteditable="true">S-a luat act de inițiativele de la nivelul Uniunii, inclusiv raportarea pentru fiecare țară în parte cu privire la mai multe sectoare, precum și de trimiterile făcute la 22 mai 2013 și la 19 și 20 decembrie 2013 de Consiliul European, în concluziile sale, la raportarea pentru fiecare țară în parte realizată de societățile și grupurile mari, de dispozițiile similare ale Directivei 2013/36/UE a Parlamentului European și a Consiliului (4) și de eforturile depuse la nivel internațional pentru a îmbunătăți transparența în raportarea financiară.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">În contextul G8 și G20, OCDE a fost invitată să elaboreze un model standardizat de raportare pentru ca întreprinderile multinaționale să poată raporta autorităților fiscale în ce țări înregistrează profit și în ce țări plătesc impozit, în întreaga lume.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Astfel de evoluții vin în completarea propunerilor din prezenta directivă ca măsuri adecvate în raport cu obiectivele urmărite.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -2057,7 +2737,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Deoarece obiectivul prezentei directive, și anume sporirea relevanței, coerenței și comparabilității informațiilor prezentate de către anumite întreprinderi și grupuri mari din întreaga Uniune, nu poate fi realizat în mod satisfăcător de către statele membre și, având în vedere efectul pe care îl produce, poate fi realizat mai bine la nivelul Uniunii, aceasta poate adopta măsuri în conformitate cu principiul subsidiarității, astfel cum este definit la articolul 5 din Tratatul privind Uniunea Europeană. În conformitate cu principiul proporționalității, astfel cum este enunțat la articolul menționat, prezenta directivă nu depășește ceea ce este necesar pentru atingerea obiectivului menționat.</span></div>
+<span class="celltext"  contenteditable="true">Deoarece obiectivul prezentei directive, și anume sporirea relevanței, coerenței și comparabilității informațiilor prezentate de către anumite întreprinderi și grupuri mari din întreaga Uniune, nu poate fi realizat în mod satisfăcător de către statele membre și, având în vedere efectul pe care îl produce, poate fi realizat mai bine la nivelul Uniunii, aceasta poate adopta măsuri în conformitate cu principiul subsidiarității, astfel cum este definit la articolul 5 din Tratatul privind Uniunea Europeană.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">În conformitate cu principiul proporționalității, astfel cum este enunțat la articolul menționat, prezenta directivă nu depășește ceea ce este necesar pentru atingerea obiectivului menționat.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -2073,7 +2761,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Prezenta directivă respectă drepturile fundamentale și se conformează principiilor recunoscute, în special, de Carta drepturilor fundamentale a Uniunii Europene, inclusiv libertatea de a desfășura o activitate comercială, respectarea vieții private și protecția datelor cu caracter personal. Prezenta directivă trebuie să fie pusă în aplicare în conformitate cu drepturile și principiile respective.</span></div>
+<span class="celltext"  contenteditable="true">Prezenta directivă respectă drepturile fundamentale și se conformează principiilor recunoscute, în special, de Carta drepturilor fundamentale a Uniunii Europene, inclusiv libertatea de a desfășura o activitate comercială, respectarea vieții private și protecția datelor cu caracter personal.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Prezenta directivă trebuie să fie pusă în aplicare în conformitate cu drepturile și principiile respective.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -2449,7 +3145,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">o descriere a politicii de diversitate aplicate în ceea ce privește organele administrative, de conducere și de supraveghere ale întreprinderii referitor la aspecte cum ar fi, de exemplu, vârsta, genul sau educația și experiența profesională, obiectivele acestei politici de diversitate, modul în care a fost pusă în aplicare și rezultatele în perioada de raportare. Dacă nu se aplică o astfel de politică, declarația conține o explicație în acest sens.”</span></div>
+<span class="celltext"  contenteditable="true">o descriere a politicii de diversitate aplicate în ceea ce privește organele administrative, de conducere și de supraveghere ale întreprinderii referitor la aspecte cum ar fi, de exemplu, vârsta, genul sau educația și experiența profesională, obiectivele acestei politici de diversitate, modul în care a fost pusă în aplicare și rezultatele în perioada de raportare.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Dacă nu se aplică o astfel de politică, declarația conține o explicație în acest sens.”</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -2929,7 +3633,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Comisia elaborează orientări fără caracter obligatoriu privind metodologia de raportare a informațiilor nefinanciare, inclusiv indicatori-cheie de performanță nefinanciară, generali și sectoriali, pentru a facilita prezentarea relevantă, utilă și comparabilă de informații nefinanciare de către întreprinderi. În acest sens, Comisia consultă părțile interesate relevante.</span></div>
+<span class="celltext"  contenteditable="true">Comisia elaborează orientări fără caracter obligatoriu privind metodologia de raportare a informațiilor nefinanciare, inclusiv indicatori-cheie de performanță nefinanciară, generali și sectoriali, pentru a facilita prezentarea relevantă, utilă și comparabilă de informații nefinanciare de către întreprinderi.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">În acest sens, Comisia consultă părțile interesate relevante.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -2961,7 +3673,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Comisia prezintă Parlamentului European și Consiliului un raport cu privire la punerea în aplicare a prezentei directive care conține, printre alte aspecte, domeniul său de aplicare, îndeosebi în ceea ce privește întreprinderile mari nelistate, eficacitatea sa și nivelul orientărilor și al metodelor puse la dispoziție. Raportul se publică până la 6 decembrie 2018 și este însoțit, după caz, de propuneri legislative.</span></div>
+<span class="celltext"  contenteditable="true">Comisia prezintă Parlamentului European și Consiliului un raport cu privire la punerea în aplicare a prezentei directive care conține, printre alte aspecte, domeniul său de aplicare, îndeosebi în ceea ce privește întreprinderile mari nelistate, eficacitatea sa și nivelul orientărilor și al metodelor puse la dispoziție.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Raportul se publică până la 6 decembrie 2018 și este însoțit, după caz, de propuneri legislative.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -2993,7 +3713,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Statele membre asigură intrarea în vigoare a actelor cu putere de lege și a actelor administrative necesare pentru a se conforma prezentei directive până la 6 decembrie 2016. Statele membre informează de îndată Comisia cu privire la aceasta.</span></div>
+<span class="celltext"  contenteditable="true">Statele membre asigură intrarea în vigoare a actelor cu putere de lege și a actelor administrative necesare pentru a se conforma prezentei directive până la 6 decembrie 2016.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Statele membre informează de îndată Comisia cu privire la aceasta.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
@@ -3009,7 +3737,15 @@
 <a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
 <a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
 </span>
-<span class="celltext"  contenteditable="true">Atunci când statele membre adoptă aceste acte, ele cuprind o trimitere la prezenta directivă sau sunt însoțite de o asemenea trimitere la data publicării lor oficiale. Statele membre stabilesc modalitatea de efectuare a acestei trimiteri.</span></div>
+<span class="celltext"  contenteditable="true">Atunci când statele membre adoptă aceste acte, ele cuprind o trimitere la prezenta directivă sau sunt însoțite de o asemenea trimitere la data publicării lor oficiale.</span></div>
+      <div class="cell">
+<span class="buttons">
+<a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
+<a href="#" class="btn btn-danger btn-xs delete" onclick="deleteFunction(this)"><span class="glyphicon glyphicon-remove"></a>
+<a href="#" class="btn btn-info btn-xs merge" onclick="mergeFunction(this)"><span class="glyphicon glyphicon-arrow-down"></a>
+<a href="#" class="btn btn-warning btn-xs split" onclick="splitFunction(this)"><span class="glyphicon glyphicon-flash"></a>
+</span>
+<span class="celltext"  contenteditable="true">Statele membre stabilesc modalitatea de efectuare a acestei trimiteri.</span></div>
       <div class="cell">
 <span class="buttons">
 <a href="#" class="btn btn-success btn-xs add" onclick="addFunction(this)"><span class="glyphicon glyphicon-plus"></a>
