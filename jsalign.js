@@ -31,9 +31,11 @@ function splitParaAtCaret() {
       var first = p.nextSibling.firstChild;
       p.nextSibling.insertBefore(span, first);
       p.removeAttribute("id");
+      p.removeAttribute("onmouseup");
       p.style.height=colHeight;
       p.style.color='black';
       p.nextSibling.removeAttribute("id");
+      p.nextSibling.removeAttribute("onmouseup");
       p.nextSibling.style.height=colHeight;
       p.nextSibling.style.color='black';
       var split_button = p.getElementsByClassName('split');
@@ -328,6 +330,10 @@ function createSpan () {
 function createNewCell() {
   var newCell = document.createElement("DIV");
   newCell.className = "cell";
+  newCell.setAttribute('draggable', 'true');
+  newCell.setAttribute('ondragstart', 'drag(event)');
+  newCell.setAttribute('onmouseover', 'addId(this)');
+  newCell.setAttribute('onmouseout', 'removeId(this)');
 
   var firstSpan = createSpan();
 
@@ -383,6 +389,30 @@ function splitFunction (item) {
     item.parentNode.parentNode.style.color='black';
   }
   event.preventDefault();
+}
+
+function allowDrop(ev) {
+      ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    if (ev.target.tagName === 'DIV') {
+      ev.target.parentNode.insertBefore(document.getElementById(data), ev.target.nextSibling);
+    }
+}
+
+function addId(x) {
+    x.setAttribute("id", "active");
+}
+
+function removeId(x) {
+    x.removeAttribute("id");
 }
 
 function populateTable() {
