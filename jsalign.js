@@ -372,7 +372,6 @@ function splitFunction (item) {
     item.parentNode.parentNode.setAttribute('onmouseup', 'splitParaAtCaret()');
     item.parentNode.parentNode.style.height='auto';
     item.firstChild.className = '';
-    console.log(item.firstChild.className);
     item.firstChild.innerHTML = 'Split';
     item.parentNode.parentNode.style.color='red';
   } else {
