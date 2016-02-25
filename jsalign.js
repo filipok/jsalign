@@ -26,10 +26,7 @@ function splitParaAtCaret() {
       range.collapseAfter(p);
       sel.setSingleRange(range);
 
-      // add span and disable function (additional code)
-      var span = createSpan();
-      var first = p.nextSibling.firstChild;
-      p.nextSibling.insertBefore(span, first);
+      // disable function (additional code)
       p.removeAttribute("id");
       p.removeAttribute("onmouseup");
       p.style.height=colHeight;
@@ -259,7 +256,7 @@ function yesDeleteFunction() {
 }
 
 function yesMergeFunction() {
-  var v = this.parentNode.parentNode.nextElementSibling.children[1].innerHTML;
+  var v = this.parentNode.parentNode.nextElementSibling.children[0].innerHTML;
   this.parentNode.parentNode.children[1].innerHTML += " " + v;
   this.parentNode.parentNode.nextElementSibling.remove();
 
@@ -333,9 +330,7 @@ function createNewCell() {
   newCell.setAttribute('draggable', 'true');
   newCell.setAttribute('ondragstart', 'drag(event)');
   newCell.setAttribute('onmouseover', 'addId(this)');
-  newCell.setAttribute('onmouseout', 'removeId(this)');
-
-  var firstSpan = createSpan();
+  newCell.setAttribute('onmouseout', 'removeId(this, event)');
 
   var secSpan =document.createElement("SPAN");
   secSpan.className = "celltext";
@@ -343,7 +338,6 @@ function createNewCell() {
   secSpan.appendChild(linkText);
   secSpan.contentEditable = "true";
 
-  newCell.appendChild(firstSpan);
   newCell.appendChild(secSpan);
   return newCell;
 }
@@ -409,10 +403,35 @@ function drop(ev) {
 
 function addId(x) {
     x.setAttribute("id", "active");
+    if (x.firstChild.className != "buttons"){
+      var firstSpan = createSpan();
+      x.insertBefore(firstSpan, x.firstChild);
+    }
 }
 
-function removeId(x) {
-    x.removeAttribute("id");
+function removeId(x, ev) {
+    var outOfWindow = ev.relatedTarget === null;
+    if (outOfWindow) {
+      x.firstChild.remove();
+      x.removeAttribute("id");
+
+    } else {
+      var notSameCell = x != ev.relatedTarget;
+
+      var el = ev.relatedTarget;
+      var isNotAncestor = true;
+      while (el.tagName != "HTML" && isNotAncestor) {
+        el = el.parentNode;
+        if (el == x){
+          isNotAncestor = false;
+          }
+        }
+
+      if (notSameCell && isNotAncestor) {
+        x.firstChild.remove();
+        x.removeAttribute("id");
+      }
+    }
 }
 
 function populateTable() {
