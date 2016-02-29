@@ -472,13 +472,17 @@ function moveFunction(item) {
     item.parentNode.parentNode.removeAttribute('id');
     item.parentNode.parentNode.removeAttribute('onmouseover');
     item.firstChild.className = 'glyphicon glyphicon-star';
-    item.nextSibling.className += ' disabled';
+    //item.nextSibling.className += ' disabled';
+    Array.prototype.map.call(item.parentNode.getElementsByClassName('btn'),
+    function(button) {button.className += ' disabled';});
+    item.classList.remove('disabled');
   } else {
     item.parentNode.parentNode.classList.remove('cut');
     item.parentNode.parentNode.setAttribute('onmouseout', 'removeId(this, event)');
     item.parentNode.parentNode.setAttribute('onmouseover', 'addId(this, event)');
     item.firstChild.className = 'glyphicon glyphicon-move';
-    item.nextSibling.classList.remove('disabled');
+    Array.prototype.map.call(item.parentNode.getElementsByClassName('btn'),
+    function(button) {button.classList.remove('disabled');});
   }
   event.preventDefault();
 }
