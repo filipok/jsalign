@@ -220,6 +220,8 @@ function deleteFunction(item) {
   item.parentNode.getElementsByClassName('add')[0].style.display = 'none';
   item.parentNode.getElementsByClassName('merge')[0].style.display = 'none';
   item.parentNode.getElementsByClassName('split')[0].style.display = 'none';
+  item.parentNode.getElementsByClassName('move')[0].style.display = 'none';
+  item.parentNode.getElementsByClassName('paste')[0].style.display = 'none';
 
   event.preventDefault();
 }
@@ -245,6 +247,8 @@ function mergeFunction(item) {
   item.parentNode.getElementsByClassName('add')[0].style.display = 'none';
   item.parentNode.getElementsByClassName('delete')[0].style.display = 'none';
   item.parentNode.getElementsByClassName('split')[0].style.display = 'none';
+  item.parentNode.getElementsByClassName('move')[0].style.display = 'none';
+  item.parentNode.getElementsByClassName('paste')[0].style.display = 'none';
 
   event.preventDefault();
 }
@@ -313,6 +317,22 @@ function createSpan () {
   splitButton.className = "btn btn-warning btn-xs split";
   splitButton.setAttribute("onclick", "splitFunction(this)");
 
+  var moveButton = document.createElement("A");
+  linkText = document.createElement('span');
+  linkText.className = "glyphicon glyphicon-move";
+  moveButton.appendChild(linkText);
+  moveButton.href = "#";
+  moveButton.className = "btn btn-default btn-xs move";
+  moveButton.setAttribute("onclick", "moveFunction(this)");
+
+  var pasteButton = document.createElement("A");
+  linkText = document.createElement('span');
+  linkText.className = "glyphicon glyphicon-paste";
+  pasteButton.appendChild(linkText);
+  pasteButton.href = "#";
+  pasteButton.className = "btn btn-primary btn-xs paste";
+  pasteButton.setAttribute("onclick", "pasteFunction(this)");
+
   firstSpan.appendChild(addButton);
   firstSpan.appendChild(document.createTextNode("\n"));
   firstSpan.appendChild(delButton);
@@ -320,6 +340,9 @@ function createSpan () {
   firstSpan.appendChild(mergeButton);
   firstSpan.appendChild(document.createTextNode("\n"));
   firstSpan.appendChild(splitButton);
+  firstSpan.appendChild(document.createTextNode("\n"));
+  firstSpan.appendChild(moveButton);
+  firstSpan.appendChild(pasteButton);
 
   return firstSpan;
 }
@@ -432,6 +455,43 @@ function removeId(x, ev) {
         x.removeAttribute("id");
       }
     }
+}
+
+function moveFunction(item) {
+  if (item.firstChild.className == 'glyphicon glyphicon-move') {
+    item.parentNode.parentNode.className += ' cut';
+    item.parentNode.parentNode.removeAttribute('onmouseout');
+    item.parentNode.parentNode.removeAttribute('id');
+    item.parentNode.parentNode.removeAttribute('onmouseover');
+    item.firstChild.className = 'glyphicon glyphicon-star';
+    item.nextSibling.className += ' disabled';
+  } else {
+    item.parentNode.parentNode.classList.remove('cut');
+    item.parentNode.parentNode.setAttribute('onmouseout', 'removeId(this, event)');
+    item.parentNode.parentNode.setAttribute('onmouseover', 'addId(this, event)');
+    item.firstChild.className = 'glyphicon glyphicon-move';
+    item.nextSibling.classList.remove('disabled');
+  }
+  event.preventDefault();
+}
+
+function pasteFunction(item) {
+  var cells = item.parentNode.parentNode.parentNode.getElementsByClassName('cut');
+  var sib = item.parentNode.parentNode.nextSibling;
+  for(i = 0; i < cells.length; i++) {
+    item.parentNode.parentNode.parentNode.insertBefore(cells[i],sib);
+  }
+  cells = item.parentNode.parentNode.parentNode.getElementsByClassName('cut');
+  cellLength = cells.length;
+  for(var j = cellLength; j--;) {
+    var myCell = cells[j];
+    myCell.classList.remove('cut');
+    myCell.setAttribute('onmouseout', 'removeId(this, event)');
+    myCell.setAttribute('onmouseover', 'addId(this, event)');
+    myCell.firstChild.getElementsByClassName('glyphicon glyphicon-star')[0].className = 'glyphicon glyphicon-move';
+    myCell.firstChild.getElementsByClassName('paste')[0].classList.remove('disabled');
+  }
+  event.preventDefault();
 }
 
 function populateTable() {
