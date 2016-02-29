@@ -29,10 +29,12 @@ function splitParaAtCaret() {
       // disable function (additional code)
       p.removeAttribute("id");
       p.removeAttribute("onmouseup");
+      p.setAttribute('onmouseout', 'removeId(this, event)');
       p.style.height=colHeight;
       p.style.color='black';
       p.nextSibling.removeAttribute("id");
       p.nextSibling.removeAttribute("onmouseup");
+      p.nextSibling.setAttribute('onmouseout', 'removeId(this, event)');
       p.nextSibling.style.height=colHeight;
       p.nextSibling.style.color='black';
       var split_button = p.getElementsByClassName('split');
@@ -393,6 +395,7 @@ function splitFunction (item) {
     moveCursor();
     item.parentNode.parentNode.setAttribute('id', 'active');
     item.parentNode.parentNode.setAttribute('onmouseup', 'splitParaAtCaret()');
+    item.parentNode.parentNode.removeAttribute('onmouseout');
     item.parentNode.parentNode.style.height='auto';
     item.firstChild.className = '';
     item.firstChild.innerHTML = 'Split';
@@ -402,6 +405,7 @@ function splitFunction (item) {
     item.firstChild.innerHTML = '';
     item.parentNode.parentNode.style.height=colHeight;
     item.parentNode.parentNode.removeAttribute('id');
+    item.parentNode.parentNode.setAttribute('onmouseout', 'removeId(this, event)');
     item.parentNode.parentNode.removeAttribute('onmouseup');
     item.parentNode.parentNode.style.color='black';
   }
