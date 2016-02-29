@@ -1,6 +1,6 @@
 //<![CDATA[
 
-var colHeight = '70px';
+var colHeight = '80px';
 
 // http://stackoverflow.com/questions/11111704/rangy-js-jquery-split-node
 function splitParaAtCaret() {
