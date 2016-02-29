@@ -404,6 +404,10 @@ function splitFunction (item) {
     item.firstChild.className = '';
     item.firstChild.innerHTML = 'Split';
     item.parentNode.parentNode.style.color='red';
+    Array.prototype.map.call(item.parentNode.getElementsByClassName('btn'),
+    function(button) {button.className += ' disabled';});
+    item.classList.remove('disabled');
+
   } else {
     item.firstChild.className = 'glyphicon glyphicon-flash';
     item.firstChild.innerHTML = '';
@@ -412,6 +416,8 @@ function splitFunction (item) {
     item.parentNode.parentNode.setAttribute('onmouseout', 'removeId(this, event)');
     item.parentNode.parentNode.removeAttribute('onmouseup');
     item.parentNode.parentNode.style.color='black';
+    Array.prototype.map.call(item.parentNode.getElementsByClassName('btn'),
+    function(button) {button.classList.remove('disabled');});
   }
   event.preventDefault();
 }
