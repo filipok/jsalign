@@ -224,6 +224,7 @@ function deleteFunction(item) {
   item.parentNode.getElementsByClassName('split')[0].style.display = 'none';
   item.parentNode.getElementsByClassName('move')[0].style.display = 'none';
   item.parentNode.getElementsByClassName('paste')[0].style.display = 'none';
+  item.parentNode.parentNode.removeAttribute('onmouseout');
 
   event.preventDefault();
 }
@@ -251,6 +252,7 @@ function mergeFunction(item) {
   item.parentNode.getElementsByClassName('split')[0].style.display = 'none';
   item.parentNode.getElementsByClassName('move')[0].style.display = 'none';
   item.parentNode.getElementsByClassName('paste')[0].style.display = 'none';
+  item.parentNode.parentNode.removeAttribute('onmouseout');
 
   event.preventDefault();
 }
@@ -265,6 +267,7 @@ function yesMergeFunction() {
   var v = this.parentNode.parentNode.nextElementSibling.children[0].innerHTML;
   this.parentNode.parentNode.children[1].innerHTML += " " + v;
   this.parentNode.parentNode.nextElementSibling.remove();
+  this.parentNode.parentNode.setAttribute('onmouseout', 'removeId(this, event)');
 
   Array.prototype.map.call(this.parentNode.getElementsByClassName('btn'),
     function(button) {button.style.display = 'inline';});
@@ -277,6 +280,7 @@ function yesMergeFunction() {
 function noFunction() {
   Array.prototype.map.call(this.parentNode.getElementsByClassName('btn'),
     function(button) {button.style.display = 'inline';});
+  this.parentNode.parentNode.setAttribute('onmouseout', 'removeId(this, event)');
   this.parentNode.getElementsByClassName('yes')[0].remove();
   this.parentNode.getElementsByClassName('no')[0].remove();
 
