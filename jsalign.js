@@ -265,6 +265,9 @@ function yesDeleteFunction() {
 
 function yesMergeFunction() {
   var v = this.parentNode.parentNode.nextElementSibling.children[0].innerHTML;
+  if (this.parentNode.parentNode.nextSibling.children[0].className === 'buttons') {
+    v = this.parentNode.parentNode.nextElementSibling.children[1].innerHTML;
+  }
   this.parentNode.parentNode.children[1].innerHTML += " " + v;
   this.parentNode.parentNode.nextElementSibling.remove();
   this.parentNode.parentNode.setAttribute('onmouseout', 'removeId(this, event)');
