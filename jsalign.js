@@ -496,18 +496,16 @@ function moveFunction(item) {
 function pasteFunction(item) {
   var cells = item.parentNode.parentNode.parentNode.getElementsByClassName('cut');
   var sib = item.parentNode.parentNode.nextSibling;
-  for(i = 0; i < cells.length; i++) {
-    item.parentNode.parentNode.parentNode.insertBefore(cells[i],sib);
-  }
-  cells = item.parentNode.parentNode.parentNode.getElementsByClassName('cut');
-  cellLength = cells.length;
-  for(var j = cellLength; j--;) {
-    var myCell = cells[j];
-    myCell.classList.remove('cut');
+  while (cells.length > 0) {
+    var myCell = cells[0];
     myCell.setAttribute('onmouseout', 'removeId(this, event)');
     myCell.setAttribute('onmouseover', 'addId(this, event)');
     myCell.firstChild.getElementsByClassName('glyphicon glyphicon-star')[0].className = 'glyphicon glyphicon-move';
-    myCell.firstChild.getElementsByClassName('paste')[0].classList.remove('disabled');
+    Array.prototype.map.call(myCell.firstChild.getElementsByClassName('btn'),
+    function(button) {button.classList.remove('disabled');});
+    myCell.classList.remove('cut');
+    cells = item.parentNode.parentNode.parentNode.getElementsByClassName('cut');
+    item.parentNode.parentNode.parentNode.insertBefore(myCell,sib);
   }
   event.preventDefault();
 }
