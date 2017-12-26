@@ -210,7 +210,7 @@ function saveBackup() {
     document.body.removeChild(a);
 }
 
-function deleteFunction(item) {
+function deleteFunction(item, event) {
     var yesButton = document.createElement('A');
     var linkText = document.createTextNode('Delete!');
     yesButton.appendChild(linkText);
@@ -266,7 +266,7 @@ function mergeFunction(item) {
     event.preventDefault();
 }
 
-function yesDeleteFunction() {
+function yesDeleteFunction(event) {
     this.parentNode.parentNode.remove();
 
     event.preventDefault();
@@ -289,7 +289,7 @@ function yesMergeFunction() {
     event.preventDefault();
 }
 
-function noFunction() {
+function noFunction(event) {
     Array.prototype.map.call(this.parentNode.getElementsByClassName('btn'),
         function(button) {button.style.display = 'inline';});
     this.parentNode.parentNode.setAttribute('onmouseout', 'removeId(this, event)');
@@ -317,7 +317,7 @@ function createSpan () {
     delButton.appendChild(linkText);
     delButton.href = '#';
     delButton.className = 'btn btn-danger btn-xs delete';
-    delButton.setAttribute('onclick', 'deleteFunction(this)');
+    delButton.setAttribute('onclick', 'deleteFunction(this, event)');
 
     var mergeButton = document.createElement('A');
     linkText = document.createElement('span');
