@@ -309,7 +309,7 @@ function createSpan () {
     addButton.appendChild(linkText);
     addButton.href = '#';
     addButton.className = 'btn btn-success btn-xs add';
-    addButton.setAttribute('onclick', 'addFunction(this)');
+    addButton.setAttribute('onclick', 'addFunction(this, event)');
 
     var delButton = document.createElement('A');
     linkText = document.createElement('span');
@@ -383,7 +383,7 @@ function createNewCell() {
     return newCell;
 }
 
-function addFunction(item) {
+function addFunction(item, event) {
     //a..span.......div........td......
     item.parentNode.parentNode.parentNode.insertBefore(
         createNewCell(),item.parentNode.parentNode.nextSibling);
