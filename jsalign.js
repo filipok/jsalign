@@ -333,7 +333,7 @@ function createSpan () {
     splitButton.appendChild(linkText);
     splitButton.href = '#';
     splitButton.className = 'btn btn-warning btn-xs split';
-    splitButton.setAttribute('onclick', 'splitFunction(this)');
+    splitButton.setAttribute('onclick', 'splitFunction(this, event)');
 
     var moveButton = document.createElement('A');
     linkText = document.createElement('span');
@@ -405,7 +405,7 @@ function moveCursor() {
     sel.addRange(range);
 }
 
-function splitFunction (item) {
+function splitFunction (item, event) {
     if (item.firstChild.className === 'glyphicon glyphicon-flash') {
         item.parentNode.parentNode.getElementsByClassName('buttons')[0].onmousedown = function(){return false;};
         moveCursor();
