@@ -2,6 +2,15 @@
 
 var colHeight = '80px';
 
+// Create Element.remove() function if not exist
+if (!('remove' in Element.prototype)) {
+    Element.prototype.remove = function() {
+        if (this.parentNode) {
+            this.parentNode.removeChild(this);
+        }
+    };
+}
+
 // http://stackoverflow.com/questions/11111704/rangy-js-jquery-split-node
 function splitParaAtCaret() {
     var sel = rangy.getSelection();
