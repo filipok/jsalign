@@ -341,7 +341,7 @@ function createSpan () {
     moveButton.appendChild(linkText);
     moveButton.href = '#';
     moveButton.className = 'btn btn-default btn-xs move';
-    moveButton.setAttribute('onclick', 'moveFunction(this)');
+    moveButton.setAttribute('onclick', 'moveFunction(this, event)');
 
     var pasteButton = document.createElement('A');
     linkText = document.createElement('span');
@@ -349,7 +349,7 @@ function createSpan () {
     pasteButton.appendChild(linkText);
     pasteButton.href = '#';
     pasteButton.className = 'btn btn-primary btn-xs paste';
-    pasteButton.setAttribute('onclick', 'pasteFunction(this)');
+    pasteButton.setAttribute('onclick', 'pasteFunction(this, event)');
 
     firstSpan.appendChild(addButton);
     firstSpan.appendChild(document.createTextNode('\n'));
@@ -483,7 +483,7 @@ function removeId(x, ev) {
     }
 }
 
-function moveFunction(item) {
+function moveFunction(item, event) {
     if (item.firstChild.className === 'glyphicon glyphicon-move') {
         item.parentNode.parentNode.className += ' cut';
         item.parentNode.parentNode.removeAttribute('onmouseout');
@@ -505,7 +505,7 @@ function moveFunction(item) {
     event.preventDefault();
 }
 
-function pasteFunction(item) {
+function pasteFunction(item, event) {
     var cells = item.parentNode.parentNode.parentNode.getElementsByClassName('cut');
     var sib = item.parentNode.parentNode.nextSibling;
     while (cells.length > 0) {
