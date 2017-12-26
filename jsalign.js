@@ -10,7 +10,7 @@ function splitParaAtCaret() {
         var range = sel.getRangeAt(0).cloneRange();
         // Get the containing paragraph
         var p = range.commonAncestorContainer;
-        while (p && (p.nodeType != 1 || p.id != 'active') ) {
+        while (p && (p.nodeType !== 1 || p.id !== 'active') ) {
             p = p.parentNode;
         }
         if (p) {
@@ -61,13 +61,13 @@ function getMeta() {
     var t_lang = '';
     var doccode= '';
     for (var i = 0; i < metaTags.length; i++) {
-        if (metaTags[i].getAttribute('name') == 'source-language') {
+        if (metaTags[i].getAttribute('name') === 'source-language') {
             s_lang = metaTags[i].getAttribute('content');
         } else {
-            if (metaTags[i].getAttribute('name') == 'target-language') {
+            if (metaTags[i].getAttribute('name') === 'target-language') {
                 t_lang = metaTags[i].getAttribute('content');
             } else {
-                if (metaTags[i].getAttribute('name') == 'doc-code') {
+                if (metaTags[i].getAttribute('name') === 'doc-code') {
                     doccode = metaTags[i].getAttribute('content');
                 }
             }
@@ -443,7 +443,7 @@ function drop(ev) {
 
 function addId(x) {
     x.setAttribute('id', 'active');
-    if (x.firstChild.className != 'buttons'){
+    if (x.firstChild.className !== 'buttons'){
         var firstSpan = createSpan();
         x.insertBefore(firstSpan, x.firstChild);
     }
@@ -456,13 +456,13 @@ function removeId(x, ev) {
         x.removeAttribute('id');
 
     } else {
-        var notSameCell = x != ev.relatedTarget;
+        var notSameCell = x !== ev.relatedTarget;
 
         var el = ev.relatedTarget;
         var isNotAncestor = true;
-        while (el.tagName != 'HTML' && isNotAncestor) {
+        while (el.tagName !== 'HTML' && isNotAncestor) {
             el = el.parentNode;
-            if (el == x){
+            if (el === x){
                 isNotAncestor = false;
             }
         }
@@ -475,7 +475,7 @@ function removeId(x, ev) {
 }
 
 function moveFunction(item) {
-    if (item.firstChild.className == 'glyphicon glyphicon-move') {
+    if (item.firstChild.className === 'glyphicon glyphicon-move') {
         item.parentNode.parentNode.className += ' cut';
         item.parentNode.parentNode.removeAttribute('onmouseout');
         item.parentNode.parentNode.removeAttribute('id');
