@@ -238,7 +238,7 @@ function deleteFunction(item, event) {
     event.preventDefault();
 }
 
-function mergeFunction(item) {
+function mergeFunction(item, event) {
     var yesButton = document.createElement('A');
     var linkText = document.createTextNode('Merge!');
     yesButton.appendChild(linkText);
@@ -272,7 +272,7 @@ function yesDeleteFunction(event) {
     event.preventDefault();
 }
 
-function yesMergeFunction() {
+function yesMergeFunction(event) {
     var v = this.parentNode.parentNode.nextElementSibling.children[0].innerHTML;
     if (this.parentNode.parentNode.nextSibling.children[0].className === 'buttons') {
         v = this.parentNode.parentNode.nextElementSibling.children[1].innerHTML;
@@ -325,7 +325,7 @@ function createSpan () {
     mergeButton.appendChild(linkText);
     mergeButton.href = '#';
     mergeButton.className = 'btn btn-info btn-xs merge';
-    mergeButton.setAttribute('onclick', 'mergeFunction(this)');
+    mergeButton.setAttribute('onclick', 'mergeFunction(this, event)');
 
     var splitButton = document.createElement('A');
     linkText = document.createElement('span');
