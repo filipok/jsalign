@@ -1,6 +1,6 @@
 # jsalign
 
-I developed jsalign as an editor for bilingual [parallel texts](https://en.wikipedia.org/wiki/Parallel_text) generated with [eunlp](https://github.com/filipok/eunlp). eunlp generates a two-column display of source and target sentences, currently from [Eur-Lex](http://eur-lex.europa.eu/homepage.html) documents. You can see an example [here](https://transverbis02.s3.amazonaws.com/wooey_files/celex-aligner/fb161d8e-5554-48b2-ac74-2c142a1d0fd7/bi_32013R1024_en_ro_manual.html). It is the output of the free online [Celex Aligner](http://www.transverbis.ro/code/scripts/celex-aligner/), which aligns Eur-Lex documents. It looks like this:
+I developed jsalign as an editor for bilingual [parallel texts](https://en.wikipedia.org/wiki/Parallel_text) generated with [eunlp](https://github.com/filipok/eunlp). eunlp generates a two-column display of source and target sentences, currently from [Eur-Lex](http://eur-lex.europa.eu/homepage.html) documents. You can see an example [here](https://transverbis02.s3.amazonaws.com/wooey_files/celex-aligner/9e287f38-075d-4d6a-adee-1787e1a19ce1/bi_32013R1024_en_ro_manual.html). It is the output of the free online [Celex Aligner](http://www.transverbis.ro/code/scripts/celex-aligner/), which aligns Eur-Lex documents. It looks like this:
 
 ![aligner](screenshots/aligner.png)
 
