@@ -22,7 +22,8 @@ function splitParaAtCaret() {
         while (p && (p.nodeType !== 1 || p.id !== 'active') ) {
             p = p.parentNode;
         }
-        if (p) {
+        // range.nativeRange.startOffset>0 prevents empty split in Firefox & IE
+        if (p && range.nativeRange.startOffset>0) {
             // Place the end of the range after the paragraph
             range.setEndAfter(p);
             // Extract the contents of the paragraph after the caret into a fragment
