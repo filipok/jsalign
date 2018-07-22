@@ -233,6 +233,7 @@ function qualityFunction(item, event){
             document.getElementById('target-col').childNodes[i+1].setAttribute("data-qc", "length");
         }
     }
+    event.preventDefault();
 
 }
 
