@@ -78,6 +78,13 @@ As an alternative to the cut and paste buttons, you can use the built-in drag an
 
 Unfortunately, the drag and drop function does not work in Internet Explorer at the moment. 
 
+
+## Quality check
+![QC](screenshots/QC.PNG)
+
+There is a basic QC function available, i.e. comparing the length of the source and target segments. Clicking the button performs a check over the entire document and highlights potential problems in pink. 
+
+
 ## Save backup
 ![save](screenshots/save.PNG)
 
