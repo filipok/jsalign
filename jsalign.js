@@ -211,6 +211,31 @@ function saveBackup() {
     document.body.removeChild(a);
 }
 
+function qualityFunction(item, event){
+    var clona = document.cloneNode(true);
+
+    var source_strings = createStrings('source-col', clona);
+    var target_strings = createStrings('target-col', clona);
+    var source_lengths = source_strings.map(function(e) {
+        return e.length;
+    });
+    var target_lengths = target_strings.map(function(e) {
+        return e.length;
+    });
+    var ratios = source_lengths.map(function(n, i) { return n / target_lengths[i]; });
+    for (var i = 0; i < source_strings.length; i++) {
+        document.getElementById('source-col').childNodes[i+1].removeAttribute("data-qc");
+        document.getElementById('target-col').childNodes[i+1].removeAttribute("data-qc");
+        var condition1 = source_lengths[i] > 4 || target_lengths[i] > 4;
+        var condition2 = isNaN(ratios[i]) || ratios[i] < 0.7 || ratios[i] >1.3;
+        if (condition1 && condition2) {
+            document.getElementById('source-col').childNodes[i+1].setAttribute("data-qc", "length");
+            document.getElementById('target-col').childNodes[i+1].setAttribute("data-qc", "length");
+        }
+    }
+
+}
+
 function deleteFunction(item, event) {
     var yesButton = document.createElement('A');
     var linkText = document.createTextNode('Delete!');
@@ -352,6 +377,14 @@ function createSpan () {
     pasteButton.className = 'btn btn-primary btn-xs paste';
     pasteButton.setAttribute('onclick', 'pasteFunction(this, event)');
 
+    var qualityButton = document.createElement('A');
+    linkText = document.createElement('span');
+    linkText.className = 'glyphicon glyphicon-cog';
+    qualityButton.appendChild(linkText);
+    qualityButton.href = '#';
+    qualityButton.className = 'btn btn-warning btn-xs cog';
+    qualityButton.setAttribute('onclick', 'qualityFunction(this, event)');
+
     firstSpan.appendChild(addButton);
     firstSpan.appendChild(document.createTextNode('\n'));
     firstSpan.appendChild(delButton);
@@ -362,6 +395,8 @@ function createSpan () {
     firstSpan.appendChild(document.createTextNode('\n'));
     firstSpan.appendChild(moveButton);
     firstSpan.appendChild(pasteButton);
+    firstSpan.appendChild(document.createTextNode('\n'));
+    firstSpan.appendChild(qualityButton);
 
     return firstSpan;
 }
