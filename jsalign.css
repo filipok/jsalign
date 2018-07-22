@@ -36,3 +36,7 @@ th {
 [contenteditable="true"]:focus {
     color: red;
 }
+
+[data-align='Err']{
+  background: yellow;
+}
