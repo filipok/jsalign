@@ -260,6 +260,7 @@ function deleteFunction(item, event) {
     item.parentNode.getElementsByClassName('split')[0].style.display = 'none';
     item.parentNode.getElementsByClassName('move')[0].style.display = 'none';
     item.parentNode.getElementsByClassName('paste')[0].style.display = 'none';
+    item.parentNode.getElementsByClassName('cog')[0].style.display = 'none';
     item.parentNode.parentNode.removeAttribute('onmouseout');
 
     event.preventDefault();
@@ -288,6 +289,7 @@ function mergeFunction(item, event) {
     item.parentNode.getElementsByClassName('split')[0].style.display = 'none';
     item.parentNode.getElementsByClassName('move')[0].style.display = 'none';
     item.parentNode.getElementsByClassName('paste')[0].style.display = 'none';
+    item.parentNode.getElementsByClassName('cog')[0].style.display = 'none';
     item.parentNode.parentNode.removeAttribute('onmouseout');
 
     event.preventDefault();
