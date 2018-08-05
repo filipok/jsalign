@@ -211,30 +211,24 @@ function saveBackup() {
     document.body.removeChild(a);
 }
 
-function qualityFunction(item, event){
-    var clona = document.cloneNode(true);
-
-    var source_strings = createStrings('source-col', clona);
-    var target_strings = createStrings('target-col', clona);
-    var source_lengths = source_strings.map(function(e) {
-        return e.length;
-    });
-    var target_lengths = target_strings.map(function(e) {
-        return e.length;
-    });
-    var ratios = source_lengths.map(function(n, i) { return n / target_lengths[i]; });
-    for (var i = 0; i < source_strings.length; i++) {
-        document.getElementById('source-col').childNodes[i+1].removeAttribute("data-qc");
-        document.getElementById('target-col').childNodes[i+1].removeAttribute("data-qc");
-        var condition1 = source_lengths[i] > 4 || target_lengths[i] > 4;
-        var condition2 = isNaN(ratios[i]) || ratios[i] < 0.7 || ratios[i] >1.3;
+function qualityFunction(event){
+    var sourceCols = document.getElementById('source-col').childNodes.length;
+    var targetCols = document.getElementById('target-col').childNodes.length;
+    var minCols = Math.min(sourceCols, targetCols);
+    for (var i = 1; i < minCols - 1; i++) {
+        var sourceLen = document.getElementById('source-col').childNodes[i].getElementsByClassName('celltext')[0].innerText.length;
+        var targetLen = document.getElementById('target-col').childNodes[i].getElementsByClassName('celltext')[0].innerText.length;
+        document.getElementById('source-col').childNodes[i].removeAttribute("data-qc");
+        document.getElementById('target-col').childNodes[i].removeAttribute("data-qc");
+        var condition1 = sourceLen > 4 || targetLen > 4;
+        var ratio = sourceLen/targetLen;
+        var condition2 = isNaN(ratio) || ratio < 0.7 || ratio > 1.3;
         if (condition1 && condition2) {
-            document.getElementById('source-col').childNodes[i+1].setAttribute("data-qc", "length");
-            document.getElementById('target-col').childNodes[i+1].setAttribute("data-qc", "length");
+            document.getElementById('source-col').childNodes[i].setAttribute("data-qc", "length");
+            document.getElementById('target-col').childNodes[i].setAttribute("data-qc", "length");
         }
     }
     event.preventDefault();
-
 }
 
 function deleteFunction(item, event) {
@@ -386,7 +380,7 @@ function createSpan () {
     qualityButton.appendChild(linkText);
     qualityButton.href = '#';
     qualityButton.className = 'btn btn-warning btn-xs cog';
-    qualityButton.setAttribute('onclick', 'qualityFunction(this, event)');
+    qualityButton.setAttribute('onclick', 'qualityFunction(event)');
 
     firstSpan.appendChild(addButton);
     firstSpan.appendChild(document.createTextNode('\n'));
