@@ -216,8 +216,8 @@ function qualityFunction(event){
     var targetCols = document.getElementById('target-col').childNodes.length;
     var minCols = Math.min(sourceCols, targetCols);
     for (var i = 1; i < minCols - 1; i++) {
-        var sourceLen = document.getElementById('source-col').childNodes[i].getElementsByClassName('celltext')[0].innerText.length;
-        var targetLen = document.getElementById('target-col').childNodes[i].getElementsByClassName('celltext')[0].innerText.length;
+        var sourceLen = document.getElementById('source-col').childNodes[i].getElementsByClassName('celltext')[0].textContent.length;
+        var targetLen = document.getElementById('target-col').childNodes[i].getElementsByClassName('celltext')[0].textContent.length;
         document.getElementById('source-col').childNodes[i].removeAttribute("data-qc");
         document.getElementById('target-col').childNodes[i].removeAttribute("data-qc");
         var condition1 = sourceLen > 4 || targetLen > 4;
